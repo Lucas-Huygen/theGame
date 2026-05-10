@@ -16,7 +16,7 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 ### 1. Site afwerken (KaaiSpots)
 
 **Lucas — content & data**
-- [X ] Verifieer alle 12 spots in `spots.js`: echte coords, openingsuren, prijzen, menu's, foto-rechten
+- [ ] Verifieer alle 12 spots in `spots.js`: echte coords, openingsuren, prijzen, menu's, foto-rechten
 - [ ] Finale NL-copy voor hero, footer, empty states; laten proofreaden
 - [ ] Beslissen over EN-vertaling (toggle is nu dood) — wiren of weghalen
 - [ ] Kleurvlak-thumbnails vervangen door echte foto's, OF bewust als stijlkeuze houden (verdedigen in reflectie)
