@@ -479,7 +479,7 @@
         <h1>${spot.name}</h1>
         <div class="meta-row">
           ${tags}${priceTag}
-          <span class="badge">${spot.walk} min wandelen</span>
+          <span class="badge">${spot.walk} min wandelen${spot.bike ? ` · ${spot.bike} min fietsen` : ''}${spot.transit ? ` · ${spot.transit} min OV` : ''}</span>
           ${favBadge}
         </div>
       </div>
@@ -501,7 +501,7 @@
           <dl class="kv">
             <dt>Adres</dt><dd>${spot.address || '—'}</dd>
             ${spot.phone ? `<dt>Telefoon</dt><dd><a href="tel:${spot.phone.replace(/\\s/g,'')}">${spot.phone}</a></dd>` : ''}
-            <dt>Vanaf campus</dt><dd>${spot.walk} min wandelen</dd>
+            <dt>Vanaf campus</dt><dd>${spot.walk} min wandelen${spot.bike ? `, ${spot.bike} min fietsen` : ''}${spot.transit ? `, ${spot.transit} min OV` : ''}</dd>
             ${paymentsHtml}
           </dl>
         </div>
