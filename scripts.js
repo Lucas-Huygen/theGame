@@ -1293,7 +1293,7 @@ if (document.getElementById('root')) {
         <div class="notfound">
           <h1>Spot niet gevonden</h1>
           <p>Geen spot met id "<span class="mono">${id || ''}</span>". Misschien is hij verwijderd, of de link klopt niet.</p>
-          <p><a class="cta" href="KaaiSpots.html" style="display:inline-block;margin-top:12px">← Terug naar de kaart</a></p>
+          <p><a class="cta" href="index.html" style="display:inline-block;margin-top:12px">← Terug naar de kaart</a></p>
         </div>`;
       return;
     }
@@ -1478,7 +1478,7 @@ if (spot.website) {
           ${perkHtml}
 
           <a class="cta" href="${routeUrl}" target="_blank" rel="noopener">Route via Google Maps →</a>
-          <a class="cta secondary" href="KaaiSpots.html">← Terug naar de kaart</a>
+          <a class="cta secondary" href="index.html">← Terug naar de kaart</a>
         </aside>
       </div>`;
   })();

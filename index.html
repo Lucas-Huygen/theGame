@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>KaaiSpots — de buurt rond Campus Kaai</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="view-list">
+
+<!-- ============== HEADER ============== -->
+<header class="header">
+  <div class="brand">
+    <span class="brand-pin" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C7.6 2 4 5.5 4 9.8c0 5.6 7.2 11.6 7.5 11.9.3.2.7.2 1 0C12.8 21.4 20 15.4 20 9.8 20 5.5 16.4 2 12 2z" fill="currentColor"/>
+        <circle cx="12" cy="9.5" r="2.6" fill="#fff"/>
+      </svg>
+    </span>
+    KaaiSpots
+  </div>
+  <div class="header-right">
+    <span class="tagline">door studenten, voor studenten</span>
+    <div class="lang-toggle" role="group" aria-label="Taal">
+      <button class="on" type="button">NL</button>
+      <button type="button">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <h1>De buurt rond Campus Kaai, <span class="accent">eindelijk in kaart gebracht.</span></h1>
+  <p>30 plekken om te eten, studeren, chillen of gewoon te ontdekken — allemaal binnen dicht bij de campus.</p>
+  <div class="hero-meta mono">
+    <span class="hero-count"><strong id="spotCountHero">10</strong> plekken</span>
+    <span class="dot"></span>
+    <span>Anderlecht · Kuregem · Sint-Gillis</span>
+    <span class="dot"></span>
+    <span>laatst gecheckt: 28 apr</span>
+  </div>
+</section>
+
+<!-- ============== FILTER BAR ============== -->
+<div class="filterbar">
+  <div class="filterbar-inner">
+    <div class="chip-group" id="catChips">
+      <button class="chip cat" data-cat="Eten"><span class="glyph">🥖</span>Eten</button>
+      <button class="chip cat" data-cat="Drinken"><span class="glyph">☕</span>Drinken</button>
+      <button class="chip cat" data-cat="Studeren"><span class="glyph">📖</span>Studeren</button>
+      <button class="chip cat" data-cat="Chillen"><span class="glyph">🌳</span>Chillen</button>
+      <button class="chip cat" data-cat="Cultuur"><span class="glyph">◐</span>Cultuur</button>
+      <button class="chip cat" data-cat="Gratis"><span class="glyph">∅</span>Gratis</button>
+    </div>
+    <div class="divider"></div>
+    <div class="chip-group" id="priceChips">
+      <button class="chip price" data-price="1">€</button>
+      <button class="chip price" data-price="2">€€</button>
+      <button class="chip price" data-price="3">€€€</button>
+    </div>
+    <div class="divider"></div>
+    <button class="toggle on" id="openNow" type="button" aria-pressed="true">
+      <span class="switch"></span>
+      <span class="label-text">Open nu</span>
+    </button>
+    <button class="reset" id="resetBtn" type="button">Reset ✕</button>
+  </div>
+</div>
+
+<!-- ============== MOBILE TABS ============== -->
+<nav class="view-tabs" aria-label="Weergave">
+  <button class="view-tab" data-view="map" type="button">Kaart</button>
+  <button class="view-tab on" data-view="list" type="button">Lijst</button>
+</nav>
+
+<!-- ============== MAIN: MAP + LIST ============== -->
+<main class="main">
+  <div id="map" aria-label="Kaart van spots rond Campus Kaai"></div>
+
+  <aside class="listpane" id="listpane">
+    <div class="list-header">
+      <h2>Spots in de buurt</h2>
+      <span class="count"><strong id="spotCount">10</strong> resultaten</span>
+    </div>
+    <div id="spotList"></div>
+  </aside>
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-left">
+    <div><strong>Een project voor The Game</strong> · Erasmushogeschool Brussel · 2026</div>
+    <div class="footer-team mono">team: Lucas · Milan · Zeno</div>
+  </div>
+  <a class="suggest-btn" href="mailto:kaaispots@ehb.be?subject=Suggestie%20voor%20een%20spot">+ Suggesteer een spot</a>
+</footer>
+
+<!-- ============== SCRIPTS ============== -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="scripts.js"></script>
+</body>
+</html>
