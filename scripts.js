@@ -61,6 +61,7 @@ window.SPOTS = [
   {
     id: 'kafka', name: 'Café Kafka',
     cats: ['Drinken','Studeren'], price: 1, coords: [50.84927761999179, 4.3480804],
+    website: 'https://kaffabar.be',
     desc: 'Brak lichtinval, sterke koffie, stopcontacten op elke tafel. Stilteplek tot 17u.',
     walk: 6, color: '#4A2FAB',
     address: 'Rue des Poissonniers 21, 1070 Anderlecht',
@@ -229,7 +230,300 @@ window.SPOTS = [
     student_perk: null,
     tips: 'Reserveer via @tonkotsubxl op Instagram. Walk-in voor 12u30 lukt meestal nog.'
   },
+  {
+  id: 'kaffabar',
+  name: 'Kaffabar',
+  cats: ['Drinken','Studeren','Eten'],
+  price: 2,
+  coords: [50.842998, 4.345641],
+  desc: 'Specialty coffee aan Rouppeplein. Veel laptops, goeie brunch en rustige sfeer.',
+  walk: 24,
+  bike: 9,
+  transit: 14,
+  color: '#8C5E3C',
+  favorite: true,
 
+  address: 'Rouppeplein 1, 1000 Brussel',
+  phone: '+32498426684',
+
+  hours: {
+    'Maandag':    'Gesloten',
+    'Dinsdag':    '08:00 – 18:00',
+    'Woensdag':   '08:00 – 18:00',
+    'Donderdag':  '08:00 – 18:00',
+    'Vrijdag':    '08:00 – 18:00',
+    'Zaterdag':   '09:00 – 18:00',
+    'Zondag':     'Gesloten'
+  },
+
+  long: 'Kaffabar is een vaste waarde geworden voor studenten, freelancers en koffiemensen in Brussel. Binnen hangt een rustige Scandinavische vibe met veel natuurlijk licht, houten tafels en genoeg plaats om een paar uur te werken. Ze serveren specialty coffee, slow coffee en stevige brunches. Vooral in de voormiddag zie je hier veel laptops en mensen die rustig zitten te studeren of werken.',
+
+  why: [
+    'Laptopvriendelijk buiten de lunchrush',
+    'Specialty coffee & slow coffee',
+    'Rustige sfeer om te studeren',
+    'Sterke brunch en homemade pastries',
+    'Terras op het Rouppeplein'
+  ],
+
+  menu: [
+    {
+      section: 'Koffie',
+      items: [
+        { name: 'Espresso', desc: 'House blend', price: '2,80' },
+        { name: 'Flat White', desc: 'Dubbele espresso met gestoomde melk', price: '4,20' },
+        { name: 'Filter Coffee', desc: 'V60 of Chemex', price: '4,50' },
+        { name: 'Espresso Tonic', desc: 'Iced coffee signature', price: '5,50' }
+      ]
+    },
+
+    {
+      section: 'Ontbijt & lunch',
+      items: [
+        { name: 'Fresh Breakfast', desc: 'Granola, yoghurt, fruit', price: '9,50' },
+        { name: 'Rustic Breakfast', desc: 'Brood, ei, kaas, confituur', price: '13,00' },
+        { name: 'Lunch Tartines', desc: 'Open sandwiches van de dag', price: '11,50' },
+        { name: 'Cake van de dag', desc: 'Homemade', price: '4,50' }
+      ]
+    },
+
+    {
+      section: 'Extra',
+      items: [
+        { name: 'Chai Latte', desc: 'Huisgemaakt', price: '4,80' },
+        { name: 'Iced Tea', desc: 'Vers gemaakt', price: '4,20' },
+        { name: 'Espresso Martini', desc: 'Vanaf de namiddag', price: '11,00' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact', 'Payconiq'],
+  student_perk: 'Gratis wifi + veel stopcontacten',
+  tips: 'Kom voor 11u als je rustig wilt studeren. Vrijdagmiddag zit het vaak helemaal vol.'
+},
+{
+  id: 'izycoffee',
+  name: 'Izy Coffee',
+  website: 'https://www.izycoffee.be/',
+
+  cats: ['Drinken','Studeren','Eten'],
+  price: 2,
+
+  coords: [50.848291, 4.347015],
+
+  desc: 'Grote koffiebar in centrum Brussel met veel plaats, lange openingsuren en laptopvriendelijke sfeer.',
+
+  walk: 22,
+  bike: 8,
+  transit: 13,
+
+  color: '#D87B4A',
+  favorite: true,
+
+  address: 'Auguste Ortsstraat 9, 1000 Brussel',
+  phone: '',
+
+  hours: {
+    'Maandag':   '07:00 – 22:00',
+    'Dinsdag':   '07:00 – 22:00',
+    'Woensdag':  '07:00 – 22:00',
+    'Donderdag': '07:00 – 22:00',
+    'Vrijdag':   '07:00 – 22:00',
+    'Zaterdag':  '07:00 – 22:00',
+    'Zondag':    '07:00 – 22:00'
+  },
+
+  long: 'Izy Coffee is één van de populairste study cafés in centrum Brussel. Door de lange openingsuren, vele zitplaatsen en snelle wifi zie je hier constant studenten en freelancers met laptops zitten. De sfeer is minder rustig dan specialty coffee bars zoals Kaffabar, maar ideaal als je lang wilt blijven werken of studeren. Ze serveren specialty coffee, iced drinks, matcha’s, vegan pastries en snelle ontbijt- of lunchopties.',
+
+  why: [
+    'Elke dag open tot 22u',
+    'Veel plaats voor laptops',
+    'Goede wifi en stopcontacten',
+    'Populaire study spot bij studenten',
+    'Snelle service voor tussen lessen'
+  ],
+
+  menu: [
+    {
+      section: 'Koffie',
+      items: [
+        { name: 'Flat White', desc: 'Dubbele espresso met melk', price: '4,40' },
+        { name: 'Cappuccino', desc: 'House blend espresso', price: '4,20' },
+        { name: 'Iced Latte', desc: 'Koude latte met ijs', price: '5,20' },
+        { name: 'Espresso', desc: 'Classic espresso shot', price: '2,90' }
+      ]
+    },
+
+    {
+      section: 'Specials',
+      items: [
+        { name: 'Taro Latte', desc: 'Populaire signature drink', price: '6,20' },
+        { name: 'Pandan Matcha', desc: 'Specialty matcha drink', price: '6,50' },
+        { name: 'Speculicious Coffee', desc: 'Signature winter coffee', price: '6,80' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Banana Bread', desc: 'Homemade style cake', price: '4,80' },
+        { name: 'Vegan Pastries', desc: 'Wisselend aanbod', price: '4,50' },
+        { name: 'Lunch Bun', desc: 'Snelle lunchoptie', price: '7,50' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact', 'Payconiq'],
+
+  student_perk: 'Open tot laat + veel laptopplaatsen',
+
+  tips: 'In de namiddag wordt het druk. Beste moment om rustig te studeren is voor 11u.'
+},
+{
+  id: 'mokcoffee',
+  name: 'MOK Coffee',
+
+  website: 'https://mokcoffee.be/',
+
+  cats: ['Drinken','Studeren','Eten'],
+  price: 2,
+
+  coords: [50.853005, 4.343961],
+
+  desc: 'Bekende specialty coffee bar in de Dansaertwijk met rustige sfeer, top koffie en aparte laptopruimte.',
+
+  walk: 18,
+  bike: 7,
+  transit: 11,
+
+  color: '#6B4C3B',
+  favorite: true,
+
+  address: 'Antoine Dansaertstraat 196, 1000 Brussel',
+  phone: '+32472058224',
+
+  hours: {
+    'Maandag':   '08:00 – 18:00',
+    'Dinsdag':   '08:00 – 18:00',
+    'Woensdag':  '08:00 – 18:00',
+    'Donderdag': '08:00 – 18:00',
+    'Vrijdag':   '08:00 – 18:00',
+    'Zaterdag':  '10:00 – 18:00',
+    'Zondag':    '10:00 – 18:00'
+  },
+
+  long: 'MOK Coffee is één van de bekendste specialty coffee bars van Brussel en wordt vaak genoemd als één van de beste koffieplekken van België. De zaak ligt in de Dansaertwijk en combineert minimalistische Scandinavische vibes met een heel rustige sfeer. Achteraan is er een aparte ruimte waar laptops welkom zijn, waardoor veel studenten en freelancers hier komen werken of studeren. Ze roasten hun eigen bonen en serveren filter coffee, espresso’s en seizoensgebonden brunchgerechten.',
+
+  why: [
+    'Eén van de bekendste specialty coffee bars van Brussel',
+    'Aparte laptopruimte achteraan',
+    'House-roasted koffiebonen',
+    'Rustige Scandinavische sfeer',
+    'Populair bij studenten en freelancers'
+  ],
+
+  menu: [
+    {
+      section: 'Koffie',
+      items: [
+        { name: 'Espresso', desc: 'House roast espresso', price: '3,00' },
+        { name: 'Flat White', desc: 'Dubbele espresso met melk', price: '4,50' },
+        { name: 'Filter Coffee', desc: 'Single origin hand brew', price: '5,50' },
+        { name: 'Nitro Coffee', desc: 'Cold brew van het vat', price: '5,80' }
+      ]
+    },
+
+    {
+      section: 'Ontbijt & lunch',
+      items: [
+        { name: 'Avocado Toast', desc: 'Zuurdesembrood & kruiden', price: '13,50' },
+        { name: 'Seasonal Brunch', desc: 'Vegetarische lunch van het seizoen', price: '15,00' },
+        { name: 'Banana Bread', desc: 'Housemade banana bread', price: '4,80' },
+        { name: 'Pastries', desc: 'Dagelijks vers gebakken', price: '4,50' }
+      ]
+    },
+
+    {
+      section: 'Extra',
+      items: [
+        { name: 'Matcha Latte', desc: 'Ceremonial grade matcha', price: '5,50' },
+        { name: 'Oat Milk Upgrade', desc: 'Havermelk', price: '0,50' },
+        { name: 'Coffee Beans', desc: 'House roasted bonen', price: 'Vanaf 16,00' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact', 'Payconiq'],
+
+  student_perk: 'Laptopruimte achteraan + gratis wifi',
+
+  tips: 'Beste moment om rustig te studeren is in de voormiddag. In het weekend vaak erg druk.'
+},
+{
+  id: 'bouche',
+  name: 'BOUCHE Specialty Coffee',
+
+  cats: ['Drinken','Studeren','Eten'],
+  price: 2,
+
+  coords: [50.841842, 4.359421],
+
+  desc: 'Specialty coffee vlak bij Naamsepoort met minimalistische inrichting en focus op filter coffee.',
+
+  walk: 31,
+  bike: 11,
+  transit: 16,
+
+  color: '#B88A6A',
+  favorite: true,
+
+  address: 'Rue de Namur 4, 1000 Bruxelles',
+  phone: '+32493299802',
+
+  hours: {
+    'Maandag':   '07:30 – 18:00',
+    'Dinsdag':   '07:30 – 18:00',
+    'Woensdag':  '07:30 – 18:00',
+    'Donderdag': '07:30 – 18:00',
+    'Vrijdag':   '07:30 – 18:00',
+    'Zaterdag':  '09:00 – 18:00',
+    'Zondag':    '09:00 – 18:00'
+  },
+
+  long: 'BOUCHE is een specialty coffee bar in het centrum van Brussel met focus op high-end filter coffee en Europese specialty roasters. Online wordt de zaak vaak genoemd als één van de betere specialty coffee spots van Brussel. De ruimte heeft een minimalistische inrichting met grote stenen toog en rustige sfeer.',
+
+  why: [
+    'Bekend in de Brusselse specialty coffee scene',
+    'Focus op filter coffee en guest roasters',
+    'Minimalistisch interieur',
+    'Populair bij koffieliefhebbers',
+    'Goede locatie vlak bij centrum'
+  ],
+
+  menu: [
+    {
+      section: 'Koffie',
+      items: [
+        { name: 'Espresso', desc: 'Specialty espresso', price: '3,60' },
+        { name: 'Milk Drinks', desc: 'Latte / cappuccino', price: '4,60 – 5,20' },
+        { name: 'Filter Coffee', desc: 'Hand brew / batch brew', price: '—' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Pastries', desc: 'Dagelijks aanbod pastries', price: '—' }
+      ]
+    }
+  ],
+
+  payments: ['Bancontact', 'Cash'],
+
+  student_perk: 'Wifi beschikbaar',
+
+  tips: 'In het weekend vaak erg druk volgens online reviews.'
+},
 ];
 
 /* ===== Main Map & List Page Logic ===== */
@@ -587,11 +881,28 @@ if (document.getElementById('root')) {
           <div class="body">${spot.student_perk}</div>
         </div>`;
     }
+let paymentsHtml = '';
 
-    let paymentsHtml = '';
-    if (spot.payments && spot.payments.length) {
-      paymentsHtml = `<dt>Betaling</dt><dd>${spot.payments.join(', ')}</dd>`;
-    }
+if (spot.payments && spot.payments.length) {
+  paymentsHtml = `
+    <dt>Betaling</dt>
+    <dd>${spot.payments.join(', ')}</dd>
+  `;
+}
+
+let websiteHtml = '';
+
+if (spot.website) {
+  websiteHtml = `
+    <dt>Website</dt>
+    <dd>
+      <a class="btn-website" href="${spot.website}" target="_blank" rel="noopener">
+        Ga naar website ↗
+      </a>
+    </dd>
+  `;
+}
+    
 
     root.innerHTML = `
       <div class="hero detail" style="background:${spot.color}">
@@ -615,17 +926,42 @@ if (document.getElementById('root')) {
           ${tipHtml}
         </main>
 
-        <aside class="side">
-          <div class="info-card">
-            <span class="open-now-pill"><span class="led"></span>Nu open</span>
-            <h3>Praktisch</h3>
-            <dl class="kv">
-              <dt>Adres</dt><dd>${spot.address || '—'}</dd>
-              ${spot.phone ? `<dt>Telefoon</dt><dd><a href="tel:${spot.phone.replace(/\\s/g,'')}">${spot.phone}</a></dd>` : ''}
-              <dt>Vanaf campus</dt><dd>${spot.walk} min wandelen${spot.bike ? `, ${spot.bike} min fietsen` : ''}${spot.transit ? `, ${spot.transit} min OV` : ''}</dd>
-              ${paymentsHtml}
-            </dl>
-          </div>
+        <aside class="side"> 
+
+  <div class="info-card">
+
+    <span class="open-now-pill">
+      <span class="led"></span>Nu open
+    </span>
+
+    <h3>Praktisch</h3>
+
+    <dl class="kv">
+
+      ${websiteHtml}
+
+      <dt>Adres</dt>
+      <dd>${spot.address || '—'}</dd>
+
+      ${spot.phone ? `
+        <dt>Telefoon</dt>
+        <dd>
+          <a href="tel:${spot.phone.replace(/\s/g,'')}">${spot.phone}</a>
+        </dd>
+      ` : ''}
+
+      <dt>Vanaf campus</dt>
+      <dd>
+        ${spot.walk} min wandelen
+        ${spot.bike ? `, ${spot.bike} min fietsen` : ''}
+        ${spot.transit ? `, ${spot.transit} min OV` : ''}
+      </dd>
+
+      ${paymentsHtml}
+
+    </dl>
+
+  </div>
 
           ${hoursHtml ? `
           <div class="info-card">
