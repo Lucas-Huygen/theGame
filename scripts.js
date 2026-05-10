@@ -524,6 +524,213 @@ window.SPOTS = [
 
   tips: 'In het weekend vaak erg druk volgens online reviews.'
 },
+{
+  id: 'taes',
+  name: "Tae's sandwich",
+
+  cats: ['Eten'],
+  price: 1,
+
+  coords: [50.84772931448716, 4.361518750700231],
+
+  desc: 'Kleine sandwichzaak in centrum Brussel met rijk belegde broodjes en vriendelijke service.',
+
+  walk: 26,
+  bike: 9,
+  transit: 14,
+
+  color: '#C96A3D',
+  favorite: true,
+
+  address: 'Rue du Gentilhomme 5, 1000 Bruxelles',
+  phone: '+32470866835',
+
+  hours: {
+    'Maandag':   '11:15 – 15:30',
+    'Dinsdag':   '11:15 – 15:30',
+    'Woensdag':  '11:15 – 15:30',
+    'Donderdag': 'Gesloten',
+    'Vrijdag':   'Gesloten',
+    'Zaterdag':  'Gesloten',
+    'Zondag':    'Gesloten'
+  },
+
+  long: 'Tae’s sandwich is een kleine broodjeszaak in het centrum van Brussel. Online reviews vermelden vooral de vriendelijke service, verse producten en goed belegde sandwiches. De zaak lijkt vooral populair als snelle lunchplek.',
+
+  why: [
+    'Verse ingrediënten volgens reviews',
+    'Goed belegde sandwiches',
+    'Kleine lokale zaak',
+    'Snelle lunchspot',
+    'Vriendelijke bediening'
+  ],
+
+  menu: [
+    {
+      section: 'Broodjes',
+      items: [
+        { name: 'Chicken Sandwich', desc: 'Kipbroodje', price: '—' },
+        { name: 'Vegetarian Sandwich', desc: 'Vegetarische optie beschikbaar', price: '—' },
+        { name: 'Homemade Dessert', desc: 'Huisgemaakt dessert volgens reviews', price: '—' }
+      ]
+    }
+  ],
+
+  payments: ['Bancontact', 'Cash'],
+
+  student_perk: null,
+
+  tips: 'Vooral geschikt voor snelle lunch. Openingsuren lijken beperkt.'
+},
+{
+  id: 'fritland',
+  name: 'Fritland',
+
+  website: 'http://fritlandbrussels.be/acceuil',
+
+  cats: ['Eten','Drinken'],
+  price: 1,
+
+  coords: [50.84772289252201, 4.349910972230997],
+
+  desc: 'Legendarische Brusselse frituur vlak bij de Beurs. Grote porties, lange wachtrijen en open tot laat.',
+
+  walk: 24,
+  bike: 8,
+  transit: 13,
+
+  color: '#D6A02C',
+  favorite: true,
+
+  address: 'Rue Henri Maus 19, 1000 Bruxelles',
+  phone: '+3225140627',
+
+  hours: {
+    'Maandag':   '11:00 – 01:00',
+    'Dinsdag':   '11:00 – 01:00',
+    'Woensdag':  '11:00 – 01:00',
+    'Donderdag': '11:00 – 03:00',
+    'Vrijdag':   '11:00 – 03:00',
+    'Zaterdag':  '11:00 – 03:00',
+    'Zondag':    '11:00 – 01:00'
+  },
+
+  long: 'Fritland is één van de bekendste frituren van Brussel en bestaat sinds 1978. De zaak ligt vlak bij de Beurs en staat bekend om Belgische frieten, mitraillettes en late-night fastfood. Online reviews noemen vooral de grote porties, snelle service en centrale locatie. Het is vaak erg druk, zeker ’s avonds en in het weekend.',
+
+  why: [
+    'Bekende Brusselse frituur sinds 1978',
+    'Open tot laat in de nacht',
+    'Grote porties frieten',
+    'Vlak bij de Beurs',
+    'Populaire stop na het uitgaan'
+  ],
+
+  menu: [
+    {
+      section: 'Frieten & snacks',
+      items: [
+        { name: 'Verse frieten', desc: 'Belgische frieten', price: '3,50 – 5,50' },
+        { name: 'Mitraillette', desc: 'Broodje met frieten en snack', price: '8,00' },
+        { name: 'Fricadelle', desc: 'Klassieke Belgische snack', price: '3,00' },
+        { name: 'Bicky Burger', desc: 'Belgische fastfoodklassieker', price: '5,00' }
+      ]
+    },
+
+    {
+      section: 'Sauzen',
+      items: [
+        { name: 'Andalouse', desc: 'Pittige Belgische saus', price: '1,00' },
+        { name: 'Samurai', desc: 'Pikante mayo', price: '1,00' },
+        { name: 'Tartaar', desc: 'Klassieke frituursaus', price: '1,00' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact'],
+
+  student_perk: null,
+
+  tips: 'Na 22u vaak erg druk. Veel mensen nemen hun frieten mee richting Grote Markt.'
+},
+{
+  id: 'biamara',
+  name: 'Bia Mara',
+
+  website: 'https://www.biamara.com/',
+
+  cats: ['Eten','Drinken'],
+  price: 2,
+
+  coords: [50.848637023774536, 4.350734920398734],
+
+  desc: 'Populaire fish & chips spot vlak bij de Beurs met duurzame vis, homemade sauzen en creatieve smaken.',
+
+  walk: 24,
+  bike: 8,
+  transit: 13,
+
+  color: '#2E5B7A',
+  favorite: true,
+
+  address: 'Rue du Marché aux Poulets 41, 1000 Bruxelles',
+  phone: '+3225020061',
+
+  hours: {
+    'Maandag':   '12:00 – 14:00 / 18:00 – 21:00',
+    'Dinsdag':   '12:00 – 14:00 / 18:00 – 21:00',
+    'Woensdag':  '12:00 – 14:00 / 18:00 – 21:00',
+    'Donderdag': '12:00 – 14:00 / 18:00 – 21:00',
+    'Vrijdag':   '12:00 – 14:00 / 18:00 – 22:00',
+    'Zaterdag':  '12:00 – 22:00',
+    'Zondag':    '12:00 – 15:00 / 18:00 – 21:00'
+  },
+
+  long: 'Bia Mara is één van de bekendste fish & chips restaurants van Brussel. De zaak staat bekend om duurzame vissoorten, lichte krokante batter en homemade sauzen met internationale smaken. Online reviews noemen vooral de creatieve combinaties, grote porties en centrale locatie vlak bij de Beurs.',
+
+  why: [
+    'Bekende fish & chips spot in Brussel',
+    'Duurzame vis en homemade sauzen',
+    'Creatieve smaken en toppings',
+    'Vlak bij de Beurs',
+    'Populair bij toeristen én locals'
+  ],
+
+  menu: [
+    {
+      section: 'Fish & Chips',
+      items: [
+        { name: 'Classic Panko', desc: 'Krokante vis met frieten', price: '13,00' },
+        { name: 'Lemon & Basil Tempura', desc: 'Tempura fish met frisse kruiden', price: '14,50' },
+        { name: 'Indian Spiced Panko', desc: 'Fish & chips met curry-lime saus', price: '14,50' }
+      ]
+    },
+
+    {
+      section: 'Sides',
+      items: [
+        { name: 'Sweet Potato Fries', desc: 'Zoete aardappelfrietjes', price: '4,00' },
+        { name: 'Minty Mushy Peas', desc: 'Klassieke mushy peas', price: '4,00' },
+        { name: 'Vietnamese Salad', desc: 'Frisse salade', price: '4,00' }
+      ]
+    },
+
+    {
+      section: 'Sauzen',
+      items: [
+        { name: 'Garlic Truffle Sauce', desc: 'Knoflook & truffel', price: '1,00' },
+        { name: 'Jalapeño Lime Sauce', desc: 'Pikant en fris', price: '1,00' },
+        { name: 'Homemade Tartar', desc: 'Huisgemaakte tartaar', price: '1,00' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact'],
+
+  student_perk: null,
+
+  tips: 'Vrijdag- en zaterdagavond vaak lange wachtrij. Lunch is meestal rustiger.'
+},
+
 ];
 
 /* ===== Main Map & List Page Logic ===== */
