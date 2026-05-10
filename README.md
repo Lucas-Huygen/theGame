@@ -5,7 +5,7 @@ Team: **Lucas · Milan · Zeno**.
 
 De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, cultuur, gratis), met detailpagina per spot.
 
-- [`KaaiSpots.html`](KaaiSpots.html) — hoofdpagina (kaart + lijst + filters)
+- [`index.html`](index.html) — hoofdpagina (kaart + lijst + filters)
 - [`spot.html`](spot.html) — detailpagina (`spot.html?id=...`)
 - [`spots.js`](spots.js) — gedeelde data (SPOTS, CAMPUS, CAT_GLYPH, CAT_CLASS)
 
@@ -64,7 +64,7 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 - [ ] Demo-video (90 sec screen recording met voice-over), embed op landing-page
 
 **Zeno**
-- [ ] Landing/marketing-pagina (los van de app) — `index.html` die de parel verkoopt en doorlinkt naar `KaaiSpots.html`
+- [ ] Landing/marketing-pagina (los van de app) — `index.html` die de parel verkoopt en doorlinkt naar `index.html`
 - [ ] E-mailhandtekening + Linktree-stijl pagina met alle assets
 
 ### 4. Proces & reflectie (cursusvereisten)
@@ -130,4 +130,4 @@ De cursus zegt letterlijk *"experiment is belangrijker dan resultaat"*. Pak per 
 
 ## Lokaal draaien
 
-Open `KaaiSpots.html` in een browser. Geen build-stap; alle dependencies (Leaflet, Google Fonts, CARTO tiles) komen via CDN.
+Open `index.html` in een browser. Geen build-stap; alle dependencies (Leaflet, Google Fonts, CARTO tiles) komen via CDN.
