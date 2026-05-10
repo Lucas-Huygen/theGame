@@ -730,7 +730,306 @@ window.SPOTS = [
 
   tips: 'Vrijdag- en zaterdagavond vaak lange wachtrij. Lunch is meestal rustiger.'
 },
+{
+  id: 'casco',
+  name: 'CASCO',
 
+  website: 'https://cafecasco.be/',
+
+  cats: ['Drinken','Eten','Chillen'],
+  price: 2,
+
+  coords: [50.84811173316971, 4.351288739388422],
+
+  desc: 'Grote bar-brasserie aan de Beurs met cocktails, speciaalbier, terras en late-night sfeer.',
+
+  walk: 24,
+  bike: 8,
+  transit: 13,
+
+  color: '#8A4F3D',
+  favorite: true,
+
+  address: 'Rue de la Bourse 42, 1000 Bruxelles',
+  phone: '',
+
+  hours: {
+    'Maandag':   '11:00 – 01:30',
+    'Dinsdag':   '11:00 – 01:30',
+    'Woensdag':  '11:00 – 01:30',
+    'Donderdag': '11:00 – 01:30',
+    'Vrijdag':   '11:00 – 03:30',
+    'Zaterdag':  '11:00 – 03:30',
+    'Zondag':    '11:00 – 01:30'
+  },
+
+  long: 'CASCO is een grote café-brasserie vlak bij de Beurs in Brussel. Overdag komen mensen hier voor koffie, lunch of een terras, terwijl het ’s avonds meer verandert in een levendige cocktailbar met muziek en DJ-sets. Online reviews noemen vooral de centrale locatie, het grote terras en de levendige sfeer.',
+
+  why: [
+    'Groot terras aan de Beurs',
+    'Cocktails, bier en food op één plek',
+    'Open tot diep in de nacht',
+    'Vaak live DJ’s en muziek',
+    'Populaire afspreekplek in centrum Brussel'
+  ],
+
+  menu: [
+    {
+      section: 'Drinks',
+      items: [
+        { name: 'Cocktails', desc: 'Klassieke en signature cocktails', price: '10,00 – 14,00' },
+        { name: 'Belgische bieren', desc: 'Lokale en internationale selectie', price: '4,00 – 7,00' },
+        { name: 'Koffie', desc: 'Espresso, cappuccino, latte', price: '3,00 – 5,00' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Burgers', desc: 'Classic burgers met frieten', price: '15,00 – 18,00' },
+        { name: 'Croquettes', desc: 'Kaas- of garnaalkroketten', price: '—' },
+        { name: 'Fingerfood', desc: 'Nachos, onion rings, snacks', price: '—' }
+      ]
+    }
+  ],
+
+  payments: [
+    'Cash',
+    'Bancontact',
+    'Payconiq',
+    'Visa',
+    'Mastercard'
+  ],
+
+  student_perk: null,
+
+  tips: 'Vrijdag- en zaterdagavond erg druk. Terras is populair bij goed weer.'
+},
+
+{
+  id: 'gecko',
+  name: 'Gecko Brunch & Cocktail Bar',
+
+  website: 'https://m.facebook.com/Gecko-Brussels-165738870268888/',
+
+  cats: ['Drinken','Eten','Chillen'],
+  price: 2,
+
+  coords: [50.848091838835856, 4.346728016400397],
+
+  desc: 'Populaire brunch- en cocktailbar op Sint-Goriksplein met groot terras en late openingsuren.',
+
+  walk: 23,
+  bike: 8,
+  transit: 12,
+
+  color: '#4E7C6D',
+  favorite: true,
+
+  address: 'Place Saint-Géry 16, 1000 Bruxelles',
+  phone: '+32485981088',
+
+  hours: {
+    'Maandag':   '08:00 – 23:00',
+    'Dinsdag':   '08:00 – 23:00',
+    'Woensdag':  '08:00 – 23:00',
+    'Donderdag': '08:00 – 03:00',
+    'Vrijdag':   '08:00 – 03:00',
+    'Zaterdag':  '08:00 – 03:00',
+    'Zondag':    '08:00 – 23:00'
+  },
+
+  long: 'Gecko is een brunch- en cocktailbar aan het Sint-Goriksplein in Brussel. Online reviews noemen vooral de gezellige sfeer, cocktails, brunchgerechten en het grote terras. De zaak ligt midden in één van de populairste uitgaansbuurten van Brussel en wordt vaak genoemd als afspreekplek voor drankjes of brunch.',
+
+  why: [
+    'Groot terras op Sint-Goriksplein',
+    'Cocktails en brunch op één plek',
+    'Open tot laat in het weekend',
+    'Centrale ligging in het centrum',
+    'Populair bij locals en toeristen'
+  ],
+
+  menu: [
+    {
+      section: 'Brunch',
+      items: [
+        { name: 'Pancakes', desc: 'Volgens reviews populair tijdens brunch', price: '—' },
+        { name: 'Omelettes', desc: 'Custom omelettes beschikbaar', price: '—' },
+        { name: 'Toast & breakfast bowls', desc: 'Ontbijt- en brunchopties', price: '—' }
+      ]
+    },
+
+    {
+      section: 'Cocktails & drinks',
+      items: [
+        { name: 'Mojito', desc: 'Vaak genoemd in reviews', price: '—' },
+        { name: 'Classic Cocktails', desc: 'Cocktailkaart met klassiekers', price: '—' },
+        { name: 'Belgische bieren', desc: 'Lokale bierselectie', price: '—' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Cheeseburger', desc: 'Vermeld in online reviews', price: '—' },
+        { name: 'Meatballs in tomato sauce', desc: 'Kleine Belgische gerechten', price: '—' },
+        { name: 'Croque Monsieur', desc: 'Lunch/snack optie', price: '—' }
+      ]
+    }
+  ],
+
+  payments: [
+    'Cash',
+    'Bancontact',
+    'Visa',
+    'Mastercard'
+  ],
+
+  student_perk: 'Gratis wifi',
+
+  tips: 'Vrijdag- en zaterdagavond meestal erg druk rond Sint-Goriksplein.'
+},
+{
+  id: 'ausoleil',
+  name: 'Au Soleil.',
+
+  cats: ['Drinken','Chillen','Studeren'],
+  price: 1,
+
+  coords: [50.84560886718737, 4.348052048168494],
+
+  desc: 'Authentiek Brussels café in de Sint-Jacobswijk met groot terras, goedkope bieren en relaxte sfeer.',
+
+  walk: 25,
+  bike: 8,
+  transit: 13,
+
+  color: '#B46A43',
+  favorite: true,
+
+  address: 'Rue du Marché au Charbon 86, 1000 Bruxelles',
+  phone: '+3225123430',
+
+  hours: {
+    'Maandag':   '09:30 – 01:00',
+    'Dinsdag':   '09:30 – 01:00',
+    'Woensdag':  '09:30 – 01:00',
+    'Donderdag': '09:30 – 01:00',
+    'Vrijdag':   '09:30 – 02:00',
+    'Zaterdag':  '09:30 – 02:00',
+    'Zondag':    '09:30 – 00:00'
+  },
+
+  long: 'Au Soleil is een klassiek Brussels café in de Sint-Jacobswijk, vlak bij het centrum. Het café bestaat al jaren en staat bekend om zijn groot terras, goedkope Belgische bieren en relaxte sfeer. Brusselse gidsen beschrijven het als één van de aangenaamste cafés van de buurt. Overdag zitten hier vaak mensen rustig koffie te drinken, lezen of werken, terwijl het ’s avonds levendiger wordt.',
+
+  why: [
+    'Authentieke Brusselse café-sfeer',
+    'Groot terras bij goed weer',
+    'Goedkope Belgische bieren',
+    'Rustig overdag, levendig ’s avonds',
+    'Populair bij locals'
+  ],
+
+  menu: [
+    {
+      section: 'Drinks',
+      items: [
+        { name: 'Belgische bieren', desc: 'Chimay, Ciney, Westmalle', price: '3,50 – 6,00' },
+        { name: 'Koffie', desc: 'Espresso en klassieke koffie', price: '—' },
+        { name: 'Cocktails', desc: 'Klassieke cocktails beschikbaar', price: '—' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Croque Monsieur', desc: 'Kleine cafégerechten', price: '—' },
+        { name: 'Pasta bolo', desc: 'Volgens Brusselse cafégidsen', price: '—' },
+        { name: 'Soep', desc: 'Kleine lunchoptie', price: '—' }
+      ]
+    }
+  ],
+
+  payments: ['Cash', 'Bancontact'],
+
+  student_perk: 'Wifi beschikbaar',
+
+  tips: 'Overdag relatief rustig. In de zomer zit het terras vaak helemaal vol.'
+},
+{
+  id: 'mortsubite',
+  name: 'À La Mort Subite',
+
+  website: 'https://www.alamortsubite.com/',
+
+  cats: ['Drinken','Chillen','Eten'],
+  price: 2,
+
+  coords: [50.84862915991566, 4.356252575313457],
+
+  desc: 'Iconisch historisch Brussels café met art deco interieur, lambiekbier en oude Brusselse sfeer.',
+
+  walk: 23,
+  bike: 8,
+  transit: 12,
+
+  color: '#7B5A42',
+  favorite: true,
+
+  address: 'Rue Montagne aux Herbes Potagères 7, 1000 Bruxelles',
+  phone: '+3225131318',
+
+  hours: {
+    'Maandag':   '11:00 – 23:00',
+    'Dinsdag':   '11:00 – 23:00',
+    'Woensdag':  '11:00 – 23:00',
+    'Donderdag': '11:00 – 23:00',
+    'Vrijdag':   '11:00 – 23:00',
+    'Zaterdag':  '11:00 – 23:00',
+    'Zondag':    'Gesloten'
+  },
+
+  long: 'À La Mort Subite is één van de bekendste historische cafés van Brussel. Het café bestaat sinds de jaren 1920 en staat bekend om zijn indrukwekkende art deco interieur, houten banken en traditionele lambiekbieren. De naam komt van een oud dobbelspel dat hier vroeger gespeeld werd. Online reviews en Brusselse gidsen beschrijven het café vaak als een plek die aanvoelt alsof je terug in de tijd stapt.',
+
+  why: [
+    'Historisch Brussels café sinds de jaren 1920',
+    'Iconisch art deco interieur',
+    'Bekend voor lambiek- en geuzebieren',
+    'Unieke oude Brusselse sfeer',
+    'Populaire stop voor toeristen én locals'
+  ],
+
+  menu: [
+    {
+      section: 'Bieren',
+      items: [
+        { name: 'Mort Subite Lambic', desc: 'Klassieke lambiek', price: '—' },
+        { name: 'Kriek', desc: 'Belgisch fruitbier', price: '—' },
+        { name: 'Geuze', desc: 'Traditioneel Brussels bier', price: '—' }
+      ]
+    },
+
+    {
+      section: 'Food',
+      items: [
+        { name: 'Croques', desc: 'Klassieke cafégerechten', price: '—' },
+        { name: 'Toast & snacks', desc: 'Kleine gerechten', price: '—' },
+        { name: 'Desserts', desc: 'Traditionele Brusselse desserts', price: '—' }
+      ]
+    }
+  ],
+
+  payments: [
+    'Cash',
+    'Bancontact',
+    'Visa',
+    'Mastercard'
+  ],
+
+  student_perk: null,
+
+  tips: 'Vaak erg druk door toeristen. Mooiste moment is in de late namiddag wanneer het iets rustiger is.'
+},
 ];
 
 /* ===== Main Map & List Page Logic ===== */
