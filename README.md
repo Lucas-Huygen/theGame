@@ -116,24 +116,15 @@ De cursus zegt letterlijk *"experiment is belangrijker dan resultaat"*. Pak per 
 
 ## Waar samen documenteren?
 
-**Aanrader: Notion** (gratis voor teams van 3, alles op één plek)
-- Eén workspace `KaaiSpots — The Game` met paginas:
-    - `Tasks` (kanban: To do / Doing / Done) — vervangt deze README-checkboxes naarmate jullie vorderen
-    - `Tool-vergelijkingen` — één pagina per test hierboven, met conclusie
-    - `Wekelijks logboek` — kort wat elk gedaan heeft + blockers
-    - `Vibe-coding chats` — exports/screenshots van AI-gesprekken
-    - `Reflecties` — drie sub-pagina's, één per persoon
-    - `Definition of Done` + `Score-argumentatie`
-- Voordeel: combineert tasks + docs + reflectie. Examinatoren kunnen één link openen.
+**Onze keuze: GitHub** — alles in één repo, version-controlled, één link voor de docent.
 
-**Alternatieven:**
-- **Google Docs + Drive** — simpelst, iedereen kent het, maar tasks zijn rommelig
-- **GitHub `/docs/`-map in deze repo** — mooie nerd-move ("we hebben alles in markdown versioned"), maar zwaar voor reflectie-schrijven
-- **Linear** — beste pure task-tool, maar geen plek voor lange docs → dan combineren met Notion of Docs
+- **Issues** = tasks. Eén issue per taak, assignen aan de juiste persoon, labels: `site` / `data` / `marketing` / `reflectie`
+- **Projects (Board)** = kanban: To do / Doing / Done — alle issues automatisch erin
+- **`/docs/`** = alle markdown-pagina's (logboek, tool-vergelijkingen, reflecties, DoD, score-argumentatie). Rendert direct op github.com
+- **`/docs/vibe-coding/`** = chat-exports als bewijsmateriaal
+- **Discussions** (optioneel) = team-beslissingen
 
-Mijn keuze: **Notion als hoofd, deze repo voor code + chat-exports**. Eén Notion-link in de finale inlevering.
-
-➡️ Een kant-en-klare Notion-template staat in [`notion-template/`](notion-template/). Importeer alle `.md`-bestanden tegelijk via Notion → Settings → Import → Markdown & CSV. Zie [`notion-template/README.md`](notion-template/README.md).
+➡️ Zie [`docs/README.md`](docs/README.md) voor de mappen-index en hoe alles gekoppeld is.
 
 ---
 
