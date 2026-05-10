@@ -15,11 +15,11 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 
 ### 1. Site afwerken (KaaiSpots)
 
-**Lucas — content & data**
-- [ ] Verifieer alle 12 spots in `spots.js`: echte coords, openingsuren, prijzen, menu's, foto-rechten
-- [ ] Finale NL-copy voor hero, footer, empty states; laten proofreaden
-- [ ] Beslissen over EN-vertaling (toggle is nu dood) — wiren of weghalen
-- [ ] Kleurvlak-thumbnails vervangen door echte foto's, OF bewust als stijlkeuze houden (verdedigen in reflectie)
+**Lucas — deploy & infra**
+- [ ] **Site deployen op Netlify** vanuit deze repo (drag-and-drop of Git-koppeling)
+- [ ] Custom domein of subdomein (bv. `kaaispots.be` of `kaaispots.netlify.app`)
+- [ ] GitHub-remote toevoegen aan de theGame-repo en pushen (zodat Netlify auto-deploy kan koppelen)
+- [ ] "Suggesteer een spot"-mailto vervangen door een echt form (Tally / Google Form / Typeform)
 
 **Milan — frontend polish**
 - [ ] "Open nu"-toggle echt laten filteren op `hours` (nu mock)
@@ -28,11 +28,11 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 - [ ] Testen op iPhone Safari + Android Chrome; mobile-default tab heroverwegen (`view-list` vs `view-map`)
 - [ ] Lighthouse-pass — accessibility + perf
 
-**Zeno — deploy & infra**
-- [ ] Host kiezen: Netlify / Vercel / GitHub Pages → deployen vanuit de repo
-- [ ] Custom domein of subdomein (bv. `kaaispots.be` of `kaaispots.netlify.app`)
-- [ ] GitHub-remote toevoegen aan de theGame-repo en pushen (zodat deploy kan koppelen)
-- [ ] "Suggesteer een spot"-mailto vervangen door een echt form (Tally / Google Form / Typeform)
+**Zeno — content & data**
+- [ ] Verifieer alle 12 spots in `spots.js`: echte coords, openingsuren, prijzen, menu's, foto-rechten
+- [ ] Finale NL-copy voor hero, footer, empty states; laten proofreaden
+- [ ] Beslissen over EN-vertaling (toggle is nu dood) — wiren of weghalen
+- [ ] Kleurvlak-thumbnails vervangen door echte foto's, OF bewust als stijlkeuze houden (verdedigen in reflectie)
 
 ### 2. Data-deel (capteren → verwerken → visualiseren)
 
@@ -132,6 +132,8 @@ De cursus zegt letterlijk *"experiment is belangrijker dan resultaat"*. Pak per 
 - **Linear** — beste pure task-tool, maar geen plek voor lange docs → dan combineren met Notion of Docs
 
 Mijn keuze: **Notion als hoofd, deze repo voor code + chat-exports**. Eén Notion-link in de finale inlevering.
+
+➡️ Een kant-en-klare Notion-template staat in [`notion-template/`](notion-template/). Importeer alle `.md`-bestanden tegelijk via Notion → Settings → Import → Markdown & CSV. Zie [`notion-template/README.md`](notion-template/README.md).
 
 ---
 
