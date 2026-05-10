@@ -80,6 +80,61 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 
 ---
 
+## Tools testen (experiment > resultaat)
+
+De cursus zegt letterlijk *"experiment is belangrijker dan resultaat"*. Pak per categorie **2 tools, gebruik ze allebei, vergelijk en documenteer waarom je een winnaar koos**. Dat geeft meteen materiaal voor de zelfreflectie.
+
+### LLM's — test **Claude vs ChatGPT**
+- Doe dezelfde taak in beide (bv. een social post schrijven, of een stuk copy verbeteren)
+- Vergelijk: kwaliteit, snelheid, toon, hoeveel prompts je nodig had
+- Documenteer welke jullie kiezen voor welke use-case (Claude voor code, ChatGPT voor brainstorm, …)
+- Bonus: probeer Gemini erbij voor lange-context taken (heel het Google Sheet samenvatten)
+
+### Automation — test **Make.com vs n8n**
+- Bouw dezelfde flow in beide: *Google Sheet rij → valideren → Discord/mail-notificatie*
+- Vergelijk: setup-tijd, hoe visueel, gratis-tier-limieten, hoe het voelt om te debuggen
+- Make = makkelijker voor beginners, n8n = open-source en zelf-hostbaar
+- Documenteer welke jullie definitief gebruiken en waarom
+
+### Analytics — test **Plausible vs eigen `localStorage`-logger**
+- Plausible: privacy-vriendelijk pageview-tracking, externe tool
+- Eigen logger: schrijf in `/stats.html` zelf events naar localStorage, visualiseer met Chart.js
+- Vergelijk: privacy, controle, gemak, wat de docent waarschijnlijk wil zien
+- Documenteer de keuze
+
+### Forms — test **Tally vs Google Forms**
+- Beide het "Suggesteer een spot"-formulier opzetten
+- Vergelijk: design, embed-mogelijkheid, integratie met Make/n8n
+- Documenteer
+
+### Vibe-coding — test **Claude Code vs Cursor**
+- Beide laten een klein stukje van de site genereren (bv. de stats-pagina)
+- Bewaar de chats als bewijs (`/docs/vibe-coding/`)
+- Documenteer welke prompts werkten, welke niet
+
+---
+
+## Waar samen documenteren?
+
+**Aanrader: Notion** (gratis voor teams van 3, alles op één plek)
+- Eén workspace `KaaiSpots — The Game` met paginas:
+    - `Tasks` (kanban: To do / Doing / Done) — vervangt deze README-checkboxes naarmate jullie vorderen
+    - `Tool-vergelijkingen` — één pagina per test hierboven, met conclusie
+    - `Wekelijks logboek` — kort wat elk gedaan heeft + blockers
+    - `Vibe-coding chats` — exports/screenshots van AI-gesprekken
+    - `Reflecties` — drie sub-pagina's, één per persoon
+    - `Definition of Done` + `Score-argumentatie`
+- Voordeel: combineert tasks + docs + reflectie. Examinatoren kunnen één link openen.
+
+**Alternatieven:**
+- **Google Docs + Drive** — simpelst, iedereen kent het, maar tasks zijn rommelig
+- **GitHub `/docs/`-map in deze repo** — mooie nerd-move ("we hebben alles in markdown versioned"), maar zwaar voor reflectie-schrijven
+- **Linear** — beste pure task-tool, maar geen plek voor lange docs → dan combineren met Notion of Docs
+
+Mijn keuze: **Notion als hoofd, deze repo voor code + chat-exports**. Eén Notion-link in de finale inlevering.
+
+---
+
 ## Lokaal draaien
 
 Open `KaaiSpots.html` in een browser. Geen build-stap; alle dependencies (Leaflet, Google Fonts, CARTO tiles) komen via CDN.
