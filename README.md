@@ -19,7 +19,7 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 - [ ] **Site deployen op Netlify** vanuit deze repo (drag-and-drop of Git-koppeling)
 - [ ] Custom domein of subdomein (bv. `kaaispots.be` of `kaaispots.netlify.app`)
 - [ ] GitHub-remote toevoegen aan de theGame-repo en pushen (zodat Netlify auto-deploy kan koppelen)
-- [ ] "Suggesteer een spot"-mailto vervangen door een echt form (Tally / Google Form / Typeform)
+- [x] "Suggesteer een spot"-mailto vervangen door een echt form → `suggest.html` embedt Tally / Google Forms / Typeform in tabs; vergelijking in `docs/Tally vs Google Forms.md`
 
 **Milan — frontend polish**
 - [ ] "Open nu"-toggle echt laten filteren op `hours` (nu mock)

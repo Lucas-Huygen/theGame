@@ -5,10 +5,10 @@
 ## Site afwerken
 
 ### Lucas — deploy & infra
-- [ ] Site deployen op Netlify
-- [ ] Custom domein of subdomein
-- [ ] GitHub-remote toevoegen + pushen
-- [ ] "Suggesteer een spot"-mailto vervangen door echt form
+- [x] Site deployen op Netlify
+- [x] Custom domein of subdomein
+- [x] GitHub-remote toevoegen + pushen
+- [x] "Suggesteer een spot"-mailto vervangen door echt form → `suggest.html` (lab met 3 tabs: Tally / Google Forms / Typeform)
 
 ### Milan — frontend polish
 - [ ] "Open nu"-toggle echt laten filteren op `hours`
