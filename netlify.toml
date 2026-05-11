@@ -10,3 +10,13 @@
   from = "/api/spot"
   to = "/.netlify/functions/spot"
   status = 200
+
+[[redirects]]
+  from = "/api/place-hours"
+  to = "/.netlify/functions/place-hours"
+  status = 200
+
+[[redirects]]
+  from = "/api/walking-distance"
+  to = "/.netlify/functions/walking-distance"
+  status = 200

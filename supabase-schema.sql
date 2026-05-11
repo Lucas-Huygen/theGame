@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS spots (
   payments     TEXT[] DEFAULT '{}',
   hours        JSONB,
   menu         JSONB,
-  facilities   JSONB
+  facilities   JSONB,
+  osm_id       TEXT    -- OpenStreetMap element ID, bv. "node/123456" of "way/123456"
 );
 
 -- Publieke read-only toegang via Row Level Security
@@ -33,3 +34,6 @@ CREATE POLICY "Public read access" ON spots FOR SELECT USING (true);
 
 -- Voer daarna supabase-seed.sql uit om de locaties toe te voegen.
 -- supabase-seed.sql staat NIET in git — vraag een teamlid om het bestand.
+
+-- Migratie voor bestaande databases (als de tabel al bestaat):
+-- ALTER TABLE spots ADD COLUMN IF NOT EXISTS osm_id TEXT;

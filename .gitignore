@@ -3,4 +3,6 @@ notion-template.zip
 .env
 spots.json
 supabase-seed.sql
-.env
+
+# Local Netlify folder
+.netlify

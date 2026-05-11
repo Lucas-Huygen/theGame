@@ -112,6 +112,18 @@ window.CAT_CLASS = {
       m.addTo(map);
     });
 
+    function isOpenNow(spot) {
+      if (!spot.hours) return true;
+      const days = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
+      const today = spot.hours[days[new Date().getDay()]];
+      if (!today || today === 'Gesloten') return false;
+      const m = today.match(/(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})/);
+      if (!m) return true;
+      const toMin = t => { const [h, mn] = t.split(':').map(Number); return h * 60 + mn; };
+      const cur = new Date().getHours() * 60 + new Date().getMinutes();
+      return cur >= toMin(m[1]) && cur < toMin(m[2]);
+    }
+
     function spotMatches(spot) {
       if (state.cats.size > 0) {
         const ok = [...state.cats].every(c => spot.cats.includes(c));
@@ -120,6 +132,7 @@ window.CAT_CLASS = {
       if (state.price !== null) {
         if (spot.price !== state.price) return false;
       }
+      if (state.openNow && !isOpenNow(spot)) return false;
       return true;
     }
 
@@ -243,6 +256,7 @@ window.CAT_CLASS = {
         state.openNow = !state.openNow;
         e.currentTarget.classList.toggle('on', state.openNow);
         e.currentTarget.setAttribute('aria-pressed', String(state.openNow));
+        applyFilters();
       });
     }
     const resetBtn = document.getElementById('resetBtn');
@@ -429,8 +443,8 @@ window.CAT_CLASS = {
 
     <div class="info-card">
 
-      <span class="open-now-pill">
-        <span class="led"></span>Nu open
+      <span class="open-now-pill" style="display:none">
+        <span class="led"></span><span class="open-label">…</span>
       </span>
 
       <h3>Praktisch</h3>
@@ -474,6 +488,44 @@ window.CAT_CLASS = {
             <a class="cta secondary" href="index.html">← Terug naar de kaart</a>
           </aside>
         </div>`;
+
+      // Live open/gesloten badge
+      const pill = root.querySelector('.open-now-pill');
+      if (pill) {
+        function showPill(isOpen, label) {
+          pill.style.display = '';
+          pill.classList.toggle('closed', !isOpen);
+          pill.querySelector('.open-label').textContent = isOpen ? 'Nu open' : 'Gesloten';
+          if (label && label !== 'Gesloten') pill.title = `Vandaag: ${label}`;
+        }
+
+        function showFromDbHours() {
+          if (!spot.hours) return;
+          const dayNames = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
+          const todayEntry = spot.hours[dayNames[new Date().getDay()]];
+          if (todayEntry === 'Gesloten') { showPill(false, null); return; }
+          if (todayEntry) {
+            const m = todayEntry.match(/(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})/);
+            if (m) {
+              const toMin = t => { const [h, mn] = t.split(':').map(Number); return h * 60 + mn; };
+              const cur = new Date().getHours() * 60 + new Date().getMinutes();
+              showPill(cur >= toMin(m[1]) && cur < toMin(m[2]), todayEntry);
+            }
+          }
+        }
+
+        if (spot.osm_id) {
+          fetch(`/api/place-hours?osm_id=${encodeURIComponent(spot.osm_id)}`)
+            .then(r => r.ok ? r.json() : null)
+            .then(data => {
+              if (data && data.isOpen !== undefined) showPill(data.isOpen, data.todayHours);
+              else showFromDbHours(); // OSM heeft geen opening_hours tag → gebruik DB
+            })
+            .catch(() => showFromDbHours());
+        } else {
+          showFromDbHours();
+        }
+      }
     })();
   }
 })();
