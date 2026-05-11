@@ -1,291 +1,1605 @@
 [
   {
-    "id": "castelao", "name": "Établissement Castelao",
-    "coords": [50.84009017991707, 4.3258508412449075],
-    "walk": 4, "bike": null, "transit": null,
-    "address": "Bergensesteenweg 258, 1070 Anderlecht", "phone": "025220341", "website": null,
-    "price": 1, "color": "#FF6B35", "favorite": true,
-    "cats": ["Eten"],
+    "id": "castelao",
+    "name": "Établissement Castelao",
+    "coords": [
+      50.84009017991707,
+      4.3258508412449075
+    ],
+    "walk": 7,
+    "bike": null,
+    "transit": null,
+    "address": "Bergensesteenweg 258, 1070 Anderlecht",
+    "phone": "025220341",
+    "website": null,
+    "price": 1,
+    "color": "#FF6B35",
+    "favorite": true,
+    "cats": [
+      "Eten"
+    ],
     "desc": "Onze vaste broodjeszaak. Belegde baguette, vriendelijke bazin, geen poespas.",
     "long": "Een tegelvloer uit 1962, een toonbank vol charcuterie en madame Castelao die elke student bij naam kent. Studentenkorting (-10%) op vertoon van je EhB-kaart, en als je vraagt om \"den dagschotel\" geeft ze meestal iets dat niet op de kaart staat.",
     "tips": "Donderdag is dagschotel-dag (lasagne). Ga vroeg, om 12u30 staat er rij.",
     "student_perk": "−10% op vertoon van EhB-kaart",
-    "why": ["Goedkoopste warme lunch in straal van 500m","Studentenkorting met EhB-kaart","4 min wandelen vanaf de campus","Wifi vragen mag, maar werkt traag"],
-    "payments": ["Cash","Bancontact","Payconiq"],
-    "hours": {"Zondag":"Gesloten","Maandag":"10:00 – 15:30","Dinsdag":"10:00 – 15:30","Woensdag":"10:00 – 15:30","Donderdag":"10:00 – 15:30","Vrijdag":"10:00 – 15:30","Zaterdag":"Gesloten"},
-    "menu": [{"section":"Belegde broodjes","items":[{"name":"Boterham Boerenham","desc":"Hesp, augurkjes, mosterd","price":"3,50"},{"name":"Baguette Italien","desc":"Salami, mozzarella, tomaat, pesto","price":"5,80"},{"name":"Vegabroodje","desc":"Hummus, geroosterde paprika, rucola","price":"5,20"},{"name":"Croque Castelao","desc":"Huisspecialiteit — kaas, hesp, bechamel","price":"6,50"}]},{"section":"Warm","items":[{"name":"Soep van de dag","desc":"Met stuk brood","price":"3,00"},{"name":"Spaghetti bolognaise","desc":"Familierecept","price":"7,50"},{"name":"Dagschotel","desc":"Wisselt — vraag aan de toog","price":"8,90"}]},{"section":"Drank","items":[{"name":"Koffie","desc":"Klein / groot","price":"1,80 / 2,40"},{"name":"Verse jus","desc":"Sinaas, geperst per glas","price":"3,50"},{"name":"Pintje","desc":"Jupiler, na 11u","price":"2,80"}]}],
+    "why": [
+      "Goedkoopste warme lunch in straal van 500m",
+      "Studentenkorting met EhB-kaart",
+      "4 min wandelen vanaf de campus",
+      "Wifi vragen mag, maar werkt traag"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Payconiq"
+    ],
+    "hours": {
+      "Zondag": "Gesloten",
+      "Maandag": "10:00 – 15:30",
+      "Dinsdag": "10:00 – 15:30",
+      "Woensdag": "10:00 – 15:30",
+      "Donderdag": "10:00 – 15:30",
+      "Vrijdag": "10:00 – 15:30",
+      "Zaterdag": "Gesloten"
+    },
+    "menu": [
+      {
+        "section": "Belegde broodjes",
+        "items": [
+          {
+            "name": "Boterham Boerenham",
+            "desc": "Hesp, augurkjes, mosterd",
+            "price": "3,50"
+          },
+          {
+            "name": "Baguette Italien",
+            "desc": "Salami, mozzarella, tomaat, pesto",
+            "price": "5,80"
+          },
+          {
+            "name": "Vegabroodje",
+            "desc": "Hummus, geroosterde paprika, rucola",
+            "price": "5,20"
+          },
+          {
+            "name": "Croque Castelao",
+            "desc": "Huisspecialiteit — kaas, hesp, bechamel",
+            "price": "6,50"
+          }
+        ]
+      },
+      {
+        "section": "Warm",
+        "items": [
+          {
+            "name": "Soep van de dag",
+            "desc": "Met stuk brood",
+            "price": "3,00"
+          },
+          {
+            "name": "Spaghetti bolognaise",
+            "desc": "Familierecept",
+            "price": "7,50"
+          },
+          {
+            "name": "Dagschotel",
+            "desc": "Wisselt — vraag aan de toog",
+            "price": "8,90"
+          }
+        ]
+      },
+      {
+        "section": "Drank",
+        "items": [
+          {
+            "name": "Koffie",
+            "desc": "Klein / groot",
+            "price": "1,80 / 2,40"
+          },
+          {
+            "name": "Verse jus",
+            "desc": "Sinaas, geperst per glas",
+            "price": "3,50"
+          },
+          {
+            "name": "Pintje",
+            "desc": "Jupiler, na 11u",
+            "price": "2,80"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "kafka", "name": "Café Kafka",
-    "coords": [50.84927761999179, 4.3480804],
-    "walk": 6, "bike": null, "transit": null,
-    "address": "Rue des Poissonniers 21, 1070 Anderlecht", "phone": null, "website": "https://kaffabar.be",
-    "price": 1, "color": "#4A2FAB", "favorite": false,
-    "cats": ["Drinken","Studeren"],
+    "id": "kafka",
+    "name": "Café Kafka",
+    "coords": [
+      50.84927761999179,
+      4.3480804
+    ],
+    "walk": 27,
+    "bike": null,
+    "transit": null,
+    "address": "Rue des Poissonniers 21, 1070 Anderlecht",
+    "phone": null,
+    "website": "https://kaffabar.be",
+    "price": 1,
+    "color": "#4A2FAB",
+    "favorite": false,
+    "cats": [
+      "Drinken",
+      "Studeren"
+    ],
     "desc": "Brak lichtinval, sterke koffie, stopcontacten op elke tafel. Stilteplek tot 17u.",
     "long": "Voormalig boekenwinkeltje omgebouwd tot café. De achterzaal is officieel \"stiltezone\" tot 17u — laptops welkom, telefoongesprekken niet. Na 17u draait de muziek aan en wordt het een gewoon buurtcafé.",
     "tips": "Ga naar de achterzaal voor stilte. Vrijdagavond is er soms vinyl-DJ.",
     "student_perk": "Eerste koffie gratis bij eerste bezoek — vraag ernaar",
-    "why": ["Stopcontact bij elke tafel","Wifi-paswoord op het bord (KAFKA2026)","Koffie blijft 1,80 — al jaren","Achterzaal is stil tot 17u"],
-    "payments": ["Cash","Bancontact"],
-    "hours": {"Maandag":"08:00 – 22:00","Dinsdag":"08:00 – 22:00","Woensdag":"08:00 – 22:00","Donderdag":"08:00 – 23:00","Vrijdag":"08:00 – 00:00","Zaterdag":"10:00 – 00:00","Zondag":"10:00 – 20:00"},
-    "menu": [{"section":"Koffie & thee","items":[{"name":"Espresso","desc":"","price":"1,80"},{"name":"Cappuccino","desc":"Met of zonder cacao","price":"2,80"},{"name":"Flat white","desc":"Bonen van Or Coffee","price":"3,20"},{"name":"Verse muntthee","desc":"Met honing","price":"3,00"}]},{"section":"Bier op tap","items":[{"name":"Jupiler","desc":"25cl","price":"2,80"},{"name":"Karmeliet Tripel","desc":"33cl","price":"4,50"},{"name":"Brussels Calling","desc":"Lokaal, IPA","price":"4,80"}]},{"section":"Klein eten","items":[{"name":"Toast kaas/hesp","desc":"","price":"4,50"},{"name":"Bord olijven & brood","desc":"","price":"5,50"},{"name":"Charcuterie plank","desc":"Voor 2","price":"12,00"}]}],
+    "why": [
+      "Stopcontact bij elke tafel",
+      "Wifi-paswoord op het bord (KAFKA2026)",
+      "Koffie blijft 1,80 — al jaren",
+      "Achterzaal is stil tot 17u"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact"
+    ],
+    "hours": {
+      "Maandag": "08:00 – 22:00",
+      "Dinsdag": "08:00 – 22:00",
+      "Woensdag": "08:00 – 22:00",
+      "Donderdag": "08:00 – 23:00",
+      "Vrijdag": "08:00 – 00:00",
+      "Zaterdag": "10:00 – 00:00",
+      "Zondag": "10:00 – 20:00"
+    },
+    "menu": [
+      {
+        "section": "Koffie & thee",
+        "items": [
+          {
+            "name": "Espresso",
+            "desc": "",
+            "price": "1,80"
+          },
+          {
+            "name": "Cappuccino",
+            "desc": "Met of zonder cacao",
+            "price": "2,80"
+          },
+          {
+            "name": "Flat white",
+            "desc": "Bonen van Or Coffee",
+            "price": "3,20"
+          },
+          {
+            "name": "Verse muntthee",
+            "desc": "Met honing",
+            "price": "3,00"
+          }
+        ]
+      },
+      {
+        "section": "Bier op tap",
+        "items": [
+          {
+            "name": "Jupiler",
+            "desc": "25cl",
+            "price": "2,80"
+          },
+          {
+            "name": "Karmeliet Tripel",
+            "desc": "33cl",
+            "price": "4,50"
+          },
+          {
+            "name": "Brussels Calling",
+            "desc": "Lokaal, IPA",
+            "price": "4,80"
+          }
+        ]
+      },
+      {
+        "section": "Klein eten",
+        "items": [
+          {
+            "name": "Toast kaas/hesp",
+            "desc": "",
+            "price": "4,50"
+          },
+          {
+            "name": "Bord olijven & brood",
+            "desc": "",
+            "price": "5,50"
+          },
+          {
+            "name": "Charcuterie plank",
+            "desc": "Voor 2",
+            "price": "12,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "parkvorst", "name": "Park van Vorst",
-    "coords": [50.8252, 4.3278],
-    "walk": 12, "bike": null, "transit": null,
-    "address": "Park van Vorst, 1190 Vorst", "phone": null, "website": null,
-    "price": 0, "color": "#1F6B2E", "favorite": false,
-    "cats": ["Chillen","Gratis"],
+    "id": "parkvorst",
+    "name": "Park van Vorst",
+    "coords": [
+      50.8252,
+      4.3278
+    ],
+    "walk": 31,
+    "bike": null,
+    "transit": null,
+    "address": "Park van Vorst, 1190 Vorst",
+    "phone": null,
+    "website": null,
+    "price": 0,
+    "color": "#1F6B2E",
+    "favorite": false,
+    "cats": [
+      "Chillen",
+      "Gratis"
+    ],
     "desc": "Open grasveld, vijver, weinig toeristen. Perfect voor een lange middagpauze.",
     "long": "Een van de weinige Brusselse parken waar je nog gewoon op het gras mag liggen zonder dat een agent komt zeggen dat het verboden is. Vijver met eenden, een tiental beuken die schaduw geven, en in de zomer wordt er soms gratis film geprojecteerd op een opblaasbaar scherm.",
     "tips": "In juli/augustus elke donderdagavond gratis openluchtcinema (vanaf 21u30).",
     "student_perk": null,
-    "why": ["Helemaal gratis","Geen toeristen","Bankjes met rugleuning (zeldzaam)","Drinkfontein bij de hoofdingang"],
+    "why": [
+      "Helemaal gratis",
+      "Geen toeristen",
+      "Bankjes met rugleuning (zeldzaam)",
+      "Drinkfontein bij de hoofdingang"
+    ],
     "payments": [],
-    "hours": {"Alle dagen":"Open 24/7 (verlicht tot 22u)"},
+    "hours": {
+      "Alle dagen": "Open 24/7 (verlicht tot 22u)"
+    },
     "menu": null,
-    "facilities": [{"name":"Drinkfontein","desc":"Bij hoofdingang"},{"name":"Toiletten","desc":"Gratis, geopend 9–17u"},{"name":"Speelplein","desc":"In het zuidelijke deel"},{"name":"Boules-pleintje","desc":"Materiaal moet je zelf meebrengen"}]
+    "facilities": [
+      {
+        "name": "Drinkfontein",
+        "desc": "Bij hoofdingang"
+      },
+      {
+        "name": "Toiletten",
+        "desc": "Gratis, geopend 9–17u"
+      },
+      {
+        "name": "Speelplein",
+        "desc": "In het zuidelijke deel"
+      },
+      {
+        "name": "Boules-pleintje",
+        "desc": "Materiaal moet je zelf meebrengen"
+      }
+    ]
   },
   {
-    "id": "abattoir", "name": "Abattoir Markt",
-    "coords": [50.84321248872317, 4.325844886000292],
-    "walk": 8, "bike": null, "transit": null,
-    "address": "Ropsy Chaudronstraat 24, 1070 Anderlecht", "phone": null, "website": null,
-    "price": 1, "color": "#B5430A", "favorite": false,
-    "cats": ["Eten","Cultuur"],
+    "id": "abattoir",
+    "name": "Abattoir Markt",
+    "coords": [
+      50.84321248872317,
+      4.325844886000292
+    ],
+    "walk": 6,
+    "bike": null,
+    "transit": null,
+    "address": "Ropsy Chaudronstraat 24, 1070 Anderlecht",
+    "phone": null,
+    "website": null,
+    "price": 1,
+    "color": "#B5430A",
+    "favorite": false,
+    "cats": [
+      "Eten",
+      "Cultuur"
+    ],
     "desc": "Vrijdag-zaterdag-zondag. Goedkope groenten, Marokkaanse bakkers, levendig.",
     "long": "De grootste overdekte markt van Brussel, op het terrein van een oud slachthuis. Ongeveer 150 kraampjes: groenten, vis, kruiden, stoffen, goedkope kleren, vers brood. Kom hier niet voor tafel-ervaring — kom om eten mee te nemen of een msemmen-pannenkoek voor 1,50 ter plaatse op te eten.",
     "tips": "Kom voor 11u, dan is alles vers en nog niet uitverkocht. Neem een eigen tas mee.",
     "student_perk": null,
-    "why": ["Groenten 30% goedkoper dan supermarkt","Verse Marokkaanse bakkers","Echt Brussel, geen toeristenmarkt","Open op zondag (zeldzaam)"],
-    "payments": ["Vooral cash — pin werkt soms"],
-    "hours": {"Maandag t/m donderdag":"Gesloten","Vrijdag":"07:00 – 14:00","Zaterdag":"07:00 – 14:00","Zondag":"07:00 – 14:00"},
-    "menu": [{"section":"Wat je hier vindt (richtprijs)","items":[{"name":"Kilo tomaten","desc":"Spaans of Marokkaans","price":"1,50 – 2,00"},{"name":"Msemmen","desc":"Marokkaanse pannenkoek, vers","price":"1,00 – 1,50"},{"name":"Stuk brood (1 kg)","desc":"Versgebakken, nog warm","price":"1,80"},{"name":"Olijven (250g)","desc":"Tien soorten","price":"2,50"},{"name":"Hele kip","desc":"Geroosterd, met patatten","price":"8,00 – 10,00"},{"name":"Couscous-mix (kruiden)","desc":"Per zakje","price":"2,00"}]}],
+    "why": [
+      "Groenten 30% goedkoper dan supermarkt",
+      "Verse Marokkaanse bakkers",
+      "Echt Brussel, geen toeristenmarkt",
+      "Open op zondag (zeldzaam)"
+    ],
+    "payments": [
+      "Vooral cash — pin werkt soms"
+    ],
+    "hours": {
+      "Maandag t/m donderdag": "Gesloten",
+      "Vrijdag": "07:00 – 14:00",
+      "Zaterdag": "07:00 – 14:00",
+      "Zondag": "07:00 – 14:00"
+    },
+    "menu": [
+      {
+        "section": "Wat je hier vindt (richtprijs)",
+        "items": [
+          {
+            "name": "Kilo tomaten",
+            "desc": "Spaans of Marokkaans",
+            "price": "1,50 – 2,00"
+          },
+          {
+            "name": "Msemmen",
+            "desc": "Marokkaanse pannenkoek, vers",
+            "price": "1,00 – 1,50"
+          },
+          {
+            "name": "Stuk brood (1 kg)",
+            "desc": "Versgebakken, nog warm",
+            "price": "1,80"
+          },
+          {
+            "name": "Olijven (250g)",
+            "desc": "Tien soorten",
+            "price": "2,50"
+          },
+          {
+            "name": "Hele kip",
+            "desc": "Geroosterd, met patatten",
+            "price": "8,00 – 10,00"
+          },
+          {
+            "name": "Couscous-mix (kruiden)",
+            "desc": "Per zakje",
+            "price": "2,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "biblio", "name": "Bibliotheek Anderlecht",
-    "coords": [50.8367, 4.3074],
-    "walk": 11, "bike": null, "transit": null,
-    "address": "Sint-Guidostraat 97, 1070 Anderlecht", "phone": null, "website": null,
-    "price": 0, "color": "#134B8A", "favorite": false,
-    "cats": ["Studeren","Gratis"],
+    "id": "biblio",
+    "name": "Bibliotheek Anderlecht",
+    "coords": [
+      50.8367,
+      4.3074
+    ],
+    "walk": 20,
+    "bike": null,
+    "transit": null,
+    "address": "Sint-Guidostraat 97, 1070 Anderlecht",
+    "phone": null,
+    "website": null,
+    "price": 0,
+    "color": "#134B8A",
+    "favorite": false,
+    "cats": [
+      "Studeren",
+      "Gratis"
+    ],
     "desc": "Stille verdieping op 2. Gratis wifi, lange tafels, sluit om 19u door de week.",
     "long": "Drie verdiepingen. Beneden = boeken, kinderhoek, soms lawaai. Verdieping 1 = computers en kranten. Verdieping 2 = stiltezone, lange houten tafels, raam op de straat. Lid worden is gratis voor wie in Brussel woont, anders 5 euro per jaar.",
     "tips": "Examenweek = vol. Kom voor 10u of zoek een plek op verdieping 1.",
     "student_perk": "Gratis lidkaart onder 26 jaar",
-    "why": ["Gratis lidmaatschap (-26 jaar)","Stille tafels op verdieping 2","Wifi: open netwerk, geen paswoord","24/7 boeken-inleverbus aan ingang"],
+    "why": [
+      "Gratis lidmaatschap (-26 jaar)",
+      "Stille tafels op verdieping 2",
+      "Wifi: open netwerk, geen paswoord",
+      "24/7 boeken-inleverbus aan ingang"
+    ],
     "payments": [],
-    "hours": {"Maandag":"Gesloten","Dinsdag":"12:30 – 19:00","Woensdag":"12:30 – 17:30","Donderdag":"15:00 – 19:00","Vrijdag":"12:30 – 17:30","Zaterdag":"10:00 – 14:00","Zondag":"Gesloten"},
+    "hours": {
+      "Maandag": "Gesloten",
+      "Dinsdag": "12:30 – 19:00",
+      "Woensdag": "12:30 – 17:30",
+      "Donderdag": "15:00 – 19:00",
+      "Vrijdag": "12:30 – 17:30",
+      "Zaterdag": "10:00 – 14:00",
+      "Zondag": "Gesloten"
+    },
     "menu": null,
-    "facilities": [{"name":"Studie-tafels","desc":"~30 plaatsen op verdieping 2"},{"name":"Computers","desc":"12 stuks, gratis met lidkaart"},{"name":"Wifi","desc":"Open, geen wachtwoord"},{"name":"Drukker","desc":"0,10 / pagina zwart-wit"},{"name":"Watercooler","desc":"Bij de ingang"}]
+    "facilities": [
+      {
+        "name": "Studie-tafels",
+        "desc": "~30 plaatsen op verdieping 2"
+      },
+      {
+        "name": "Computers",
+        "desc": "12 stuks, gratis met lidkaart"
+      },
+      {
+        "name": "Wifi",
+        "desc": "Open, geen wachtwoord"
+      },
+      {
+        "name": "Drukker",
+        "desc": "0,10 / pagina zwart-wit"
+      },
+      {
+        "name": "Watercooler",
+        "desc": "Bij de ingang"
+      }
+    ]
   },
   {
-    "id": "ramen", "name": "Takumi Tonkotsu Brussel",
-    "coords": [50.85016763409128, 4.3479046308424065],
-    "walk": 32, "bike": 8, "transit": 18,
-    "address": "Rue Sainte-Catherine 35, 1000 Brussel", "phone": null, "website": null,
-    "price": 2, "color": "#7A1F2D", "favorite": false,
-    "cats": ["Eten","Drinken"],
+    "id": "ramen",
+    "name": "Takumi Tonkotsu Brussel",
+    "coords": [
+      50.85016763409128,
+      4.3479046308424065
+    ],
+    "walk": 28,
+    "bike": 8,
+    "transit": 18,
+    "address": "Rue Sainte-Catherine 35, 1000 Brussel",
+    "phone": null,
+    "website": null,
+    "price": 2,
+    "color": "#7A1F2D",
+    "favorite": false,
+    "cats": [
+      "Eten",
+      "Drinken"
+    ],
     "desc": "Ramen-zaakje. Lunchformule 12 euro, drukst rond 13u.",
     "long": "Tien tafels, een open keuken, drie soorten ramen. De bouillon trekt 14 uur. Lunchformule (ramen + bijgerecht + drank) is 12 euro en is een van de beste deals in zuidelijk Brussel. Reserveren via Instagram-DM.",
     "tips": "Reserveer via @tonkotsubxl op Instagram. Walk-in voor 12u30 lukt meestal nog.",
     "student_perk": null,
-    "why": ["Lunchformule 12 euro","14u-bouillon — geen poederzooi","Vegan ramen op de kaart","Reserveren makkelijk via Insta"],
-    "payments": ["Bancontact","Cash","Payconiq"],
-    "hours": {"Maandag":"12:00 – 22:00","Dinsdag":"12:00 – 22:00","Woensdag":"12:00 – 22:00","Donderdag":"12:00 – 22:00","Vrijdag":"12:00 – 22:30","Zaterdag":"12:00 – 22:30","Zondag":"12:00 – 21:30"},
-    "menu": [{"section":"Ramen","items":[{"name":"Tonkotsu","desc":"Klassiek varkensbouillon, chashu, ei","price":"14,50"},{"name":"Shoyu kip","desc":"Sojabouillon, gerookte kip","price":"13,50"},{"name":"Vegan miso","desc":"Tofu, paddenstoelen, mais","price":"13,00"}]},{"section":"Bijgerechten","items":[{"name":"Gyoza (5)","desc":"Varken of groenten","price":"6,50"},{"name":"Edamame","desc":"Met zeezout","price":"4,00"},{"name":"Karaage","desc":"Gefrituurde kip, 6 stuks","price":"7,50"}]},{"section":"Lunchformule (12u – 14u30)","items":[{"name":"Ramen + edamame + thee","desc":"Alle ramen behalve tonkotsu","price":"12,00"}]}],
+    "why": [
+      "Lunchformule 12 euro",
+      "14u-bouillon — geen poederzooi",
+      "Vegan ramen op de kaart",
+      "Reserveren makkelijk via Insta"
+    ],
+    "payments": [
+      "Bancontact",
+      "Cash",
+      "Payconiq"
+    ],
+    "hours": {
+      "Maandag": "12:00 – 22:00",
+      "Dinsdag": "12:00 – 22:00",
+      "Woensdag": "12:00 – 22:00",
+      "Donderdag": "12:00 – 22:00",
+      "Vrijdag": "12:00 – 22:30",
+      "Zaterdag": "12:00 – 22:30",
+      "Zondag": "12:00 – 21:30"
+    },
+    "menu": [
+      {
+        "section": "Ramen",
+        "items": [
+          {
+            "name": "Tonkotsu",
+            "desc": "Klassiek varkensbouillon, chashu, ei",
+            "price": "14,50"
+          },
+          {
+            "name": "Shoyu kip",
+            "desc": "Sojabouillon, gerookte kip",
+            "price": "13,50"
+          },
+          {
+            "name": "Vegan miso",
+            "desc": "Tofu, paddenstoelen, mais",
+            "price": "13,00"
+          }
+        ]
+      },
+      {
+        "section": "Bijgerechten",
+        "items": [
+          {
+            "name": "Gyoza (5)",
+            "desc": "Varken of groenten",
+            "price": "6,50"
+          },
+          {
+            "name": "Edamame",
+            "desc": "Met zeezout",
+            "price": "4,00"
+          },
+          {
+            "name": "Karaage",
+            "desc": "Gefrituurde kip, 6 stuks",
+            "price": "7,50"
+          }
+        ]
+      },
+      {
+        "section": "Lunchformule (12u – 14u30)",
+        "items": [
+          {
+            "name": "Ramen + edamame + thee",
+            "desc": "Alle ramen behalve tonkotsu",
+            "price": "12,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "kaffabar", "name": "Kaffabar",
-    "coords": [50.842998, 4.345641],
-    "walk": 24, "bike": 9, "transit": 14,
-    "address": "Rouppeplein 1, 1000 Brussel", "phone": "+32498426684", "website": null,
-    "price": 2, "color": "#8C5E3C", "favorite": true,
-    "cats": ["Drinken","Studeren","Eten"],
+    "id": "kaffabar",
+    "name": "Kaffabar",
+    "coords": [
+      50.842998,
+      4.345641
+    ],
+    "walk": 25,
+    "bike": 9,
+    "transit": 14,
+    "address": "Rouppeplein 1, 1000 Brussel",
+    "phone": "+32498426684",
+    "website": null,
+    "price": 2,
+    "color": "#8C5E3C",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Studeren",
+      "Eten"
+    ],
     "desc": "Specialty coffee aan Rouppeplein. Veel laptops, goeie brunch en rustige sfeer.",
     "long": "Kaffabar is een vaste waarde geworden voor studenten, freelancers en koffiemensen in Brussel. Binnen hangt een rustige Scandinavische vibe met veel natuurlijk licht, houten tafels en genoeg plaats om een paar uur te werken. Ze serveren specialty coffee, slow coffee en stevige brunches. Vooral in de voormiddag zie je hier veel laptops en mensen die rustig zitten te studeren of werken.",
     "tips": "Kom voor 11u als je rustig wilt studeren. Vrijdagmiddag zit het vaak helemaal vol.",
     "student_perk": "Gratis wifi + veel stopcontacten",
-    "why": ["Laptopvriendelijk buiten de lunchrush","Specialty coffee & slow coffee","Rustige sfeer om te studeren","Sterke brunch en homemade pastries","Terras op het Rouppeplein"],
-    "payments": ["Cash","Bancontact","Payconiq"],
-    "hours": {"Maandag":"Gesloten","Dinsdag":"08:00 – 18:00","Woensdag":"08:00 – 18:00","Donderdag":"08:00 – 18:00","Vrijdag":"08:00 – 18:00","Zaterdag":"09:00 – 18:00","Zondag":"Gesloten"},
-    "menu": [{"section":"Koffie","items":[{"name":"Espresso","desc":"House blend","price":"2,80"},{"name":"Flat White","desc":"Dubbele espresso met gestoomde melk","price":"4,20"},{"name":"Filter Coffee","desc":"V60 of Chemex","price":"4,50"},{"name":"Espresso Tonic","desc":"Iced coffee signature","price":"5,50"}]},{"section":"Ontbijt & lunch","items":[{"name":"Fresh Breakfast","desc":"Granola, yoghurt, fruit","price":"9,50"},{"name":"Rustic Breakfast","desc":"Brood, ei, kaas, confituur","price":"13,00"},{"name":"Lunch Tartines","desc":"Open sandwiches van de dag","price":"11,50"},{"name":"Cake van de dag","desc":"Homemade","price":"4,50"}]},{"section":"Extra","items":[{"name":"Chai Latte","desc":"Huisgemaakt","price":"4,80"},{"name":"Iced Tea","desc":"Vers gemaakt","price":"4,20"},{"name":"Espresso Martini","desc":"Vanaf de namiddag","price":"11,00"}]}],
+    "why": [
+      "Laptopvriendelijk buiten de lunchrush",
+      "Specialty coffee & slow coffee",
+      "Rustige sfeer om te studeren",
+      "Sterke brunch en homemade pastries",
+      "Terras op het Rouppeplein"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Payconiq"
+    ],
+    "hours": {
+      "Maandag": "Gesloten",
+      "Dinsdag": "08:00 – 18:00",
+      "Woensdag": "08:00 – 18:00",
+      "Donderdag": "08:00 – 18:00",
+      "Vrijdag": "08:00 – 18:00",
+      "Zaterdag": "09:00 – 18:00",
+      "Zondag": "Gesloten"
+    },
+    "menu": [
+      {
+        "section": "Koffie",
+        "items": [
+          {
+            "name": "Espresso",
+            "desc": "House blend",
+            "price": "2,80"
+          },
+          {
+            "name": "Flat White",
+            "desc": "Dubbele espresso met gestoomde melk",
+            "price": "4,20"
+          },
+          {
+            "name": "Filter Coffee",
+            "desc": "V60 of Chemex",
+            "price": "4,50"
+          },
+          {
+            "name": "Espresso Tonic",
+            "desc": "Iced coffee signature",
+            "price": "5,50"
+          }
+        ]
+      },
+      {
+        "section": "Ontbijt & lunch",
+        "items": [
+          {
+            "name": "Fresh Breakfast",
+            "desc": "Granola, yoghurt, fruit",
+            "price": "9,50"
+          },
+          {
+            "name": "Rustic Breakfast",
+            "desc": "Brood, ei, kaas, confituur",
+            "price": "13,00"
+          },
+          {
+            "name": "Lunch Tartines",
+            "desc": "Open sandwiches van de dag",
+            "price": "11,50"
+          },
+          {
+            "name": "Cake van de dag",
+            "desc": "Homemade",
+            "price": "4,50"
+          }
+        ]
+      },
+      {
+        "section": "Extra",
+        "items": [
+          {
+            "name": "Chai Latte",
+            "desc": "Huisgemaakt",
+            "price": "4,80"
+          },
+          {
+            "name": "Iced Tea",
+            "desc": "Vers gemaakt",
+            "price": "4,20"
+          },
+          {
+            "name": "Espresso Martini",
+            "desc": "Vanaf de namiddag",
+            "price": "11,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "izycoffee", "name": "Izy Coffee",
-    "coords": [50.848291, 4.347015],
-    "walk": 22, "bike": 8, "transit": 13,
-    "address": "Auguste Ortsstraat 9, 1000 Brussel", "phone": null, "website": "https://www.izycoffee.be/",
-    "price": 2, "color": "#D87B4A", "favorite": true,
-    "cats": ["Drinken","Studeren","Eten"],
+    "id": "izycoffee",
+    "name": "Izy Coffee",
+    "coords": [
+      50.848291,
+      4.347015
+    ],
+    "walk": 26,
+    "bike": 8,
+    "transit": 13,
+    "address": "Auguste Ortsstraat 9, 1000 Brussel",
+    "phone": null,
+    "website": "https://www.izycoffee.be/",
+    "price": 2,
+    "color": "#D87B4A",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Studeren",
+      "Eten"
+    ],
     "desc": "Grote koffiebar in centrum Brussel met veel plaats, lange openingsuren en laptopvriendelijke sfeer.",
     "long": "Izy Coffee is één van de populairste study cafés in centrum Brussel. Door de lange openingsuren, vele zitplaatsen en snelle wifi zie je hier constant studenten en freelancers met laptops zitten. Ze serveren specialty coffee, iced drinks, matcha's, vegan pastries en snelle ontbijt- of lunchopties.",
     "tips": "In de namiddag wordt het druk. Beste moment om rustig te studeren is voor 11u.",
     "student_perk": "Open tot laat + veel laptopplaatsen",
-    "why": ["Elke dag open tot 22u","Veel plaats voor laptops","Goede wifi en stopcontacten","Populaire study spot bij studenten","Snelle service voor tussen lessen"],
-    "payments": ["Cash","Bancontact","Payconiq"],
-    "hours": {"Maandag":"07:00 – 22:00","Dinsdag":"07:00 – 22:00","Woensdag":"07:00 – 22:00","Donderdag":"07:00 – 22:00","Vrijdag":"07:00 – 22:00","Zaterdag":"07:00 – 22:00","Zondag":"07:00 – 22:00"},
-    "menu": [{"section":"Koffie","items":[{"name":"Flat White","desc":"Dubbele espresso met melk","price":"4,40"},{"name":"Cappuccino","desc":"House blend espresso","price":"4,20"},{"name":"Iced Latte","desc":"Koude latte met ijs","price":"5,20"},{"name":"Espresso","desc":"Classic espresso shot","price":"2,90"}]},{"section":"Specials","items":[{"name":"Taro Latte","desc":"Populaire signature drink","price":"6,20"},{"name":"Pandan Matcha","desc":"Specialty matcha drink","price":"6,50"},{"name":"Speculicious Coffee","desc":"Signature winter coffee","price":"6,80"}]},{"section":"Food","items":[{"name":"Banana Bread","desc":"Homemade style cake","price":"4,80"},{"name":"Vegan Pastries","desc":"Wisselend aanbod","price":"4,50"},{"name":"Lunch Bun","desc":"Snelle lunchoptie","price":"7,50"}]}],
+    "why": [
+      "Elke dag open tot 22u",
+      "Veel plaats voor laptops",
+      "Goede wifi en stopcontacten",
+      "Populaire study spot bij studenten",
+      "Snelle service voor tussen lessen"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Payconiq"
+    ],
+    "hours": {
+      "Maandag": "07:00 – 22:00",
+      "Dinsdag": "07:00 – 22:00",
+      "Woensdag": "07:00 – 22:00",
+      "Donderdag": "07:00 – 22:00",
+      "Vrijdag": "07:00 – 22:00",
+      "Zaterdag": "07:00 – 22:00",
+      "Zondag": "07:00 – 22:00"
+    },
+    "menu": [
+      {
+        "section": "Koffie",
+        "items": [
+          {
+            "name": "Flat White",
+            "desc": "Dubbele espresso met melk",
+            "price": "4,40"
+          },
+          {
+            "name": "Cappuccino",
+            "desc": "House blend espresso",
+            "price": "4,20"
+          },
+          {
+            "name": "Iced Latte",
+            "desc": "Koude latte met ijs",
+            "price": "5,20"
+          },
+          {
+            "name": "Espresso",
+            "desc": "Classic espresso shot",
+            "price": "2,90"
+          }
+        ]
+      },
+      {
+        "section": "Specials",
+        "items": [
+          {
+            "name": "Taro Latte",
+            "desc": "Populaire signature drink",
+            "price": "6,20"
+          },
+          {
+            "name": "Pandan Matcha",
+            "desc": "Specialty matcha drink",
+            "price": "6,50"
+          },
+          {
+            "name": "Speculicious Coffee",
+            "desc": "Signature winter coffee",
+            "price": "6,80"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Banana Bread",
+            "desc": "Homemade style cake",
+            "price": "4,80"
+          },
+          {
+            "name": "Vegan Pastries",
+            "desc": "Wisselend aanbod",
+            "price": "4,50"
+          },
+          {
+            "name": "Lunch Bun",
+            "desc": "Snelle lunchoptie",
+            "price": "7,50"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "mokcoffee", "name": "MOK Coffee",
-    "coords": [50.853005, 4.343961],
-    "walk": 18, "bike": 7, "transit": 11,
-    "address": "Antoine Dansaertstraat 196, 1000 Brussel", "phone": "+32472058224", "website": "https://mokcoffee.be/",
-    "price": 2, "color": "#6B4C3B", "favorite": true,
-    "cats": ["Drinken","Studeren","Eten"],
+    "id": "mokcoffee",
+    "name": "MOK Coffee",
+    "coords": [
+      50.853005,
+      4.343961
+    ],
+    "walk": 25,
+    "bike": 7,
+    "transit": 11,
+    "address": "Antoine Dansaertstraat 196, 1000 Brussel",
+    "phone": "+32472058224",
+    "website": "https://mokcoffee.be/",
+    "price": 2,
+    "color": "#6B4C3B",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Studeren",
+      "Eten"
+    ],
     "desc": "Bekende specialty coffee bar in de Dansaertwijk met rustige sfeer, top koffie en aparte laptopruimte.",
     "long": "MOK Coffee is één van de bekendste specialty coffee bars van Brussel en wordt vaak genoemd als één van de beste koffieplekken van België. Ze roasten hun eigen bonen en serveren filter coffee, espresso's en seizoensgebonden brunchgerechten. Achteraan is er een aparte ruimte waar laptops welkom zijn.",
     "tips": "Beste moment om rustig te studeren is in de voormiddag. In het weekend vaak erg druk.",
     "student_perk": "Laptopruimte achteraan + gratis wifi",
-    "why": ["Eén van de bekendste specialty coffee bars van Brussel","Aparte laptopruimte achteraan","House-roasted koffiebonen","Rustige Scandinavische sfeer","Populair bij studenten en freelancers"],
-    "payments": ["Cash","Bancontact","Payconiq"],
-    "hours": {"Maandag":"08:00 – 18:00","Dinsdag":"08:00 – 18:00","Woensdag":"08:00 – 18:00","Donderdag":"08:00 – 18:00","Vrijdag":"08:00 – 18:00","Zaterdag":"10:00 – 18:00","Zondag":"10:00 – 18:00"},
-    "menu": [{"section":"Koffie","items":[{"name":"Espresso","desc":"House roast espresso","price":"3,00"},{"name":"Flat White","desc":"Dubbele espresso met melk","price":"4,50"},{"name":"Filter Coffee","desc":"Single origin hand brew","price":"5,50"},{"name":"Nitro Coffee","desc":"Cold brew van het vat","price":"5,80"}]},{"section":"Ontbijt & lunch","items":[{"name":"Avocado Toast","desc":"Zuurdesembrood & kruiden","price":"13,50"},{"name":"Seasonal Brunch","desc":"Vegetarische lunch van het seizoen","price":"15,00"},{"name":"Banana Bread","desc":"Housemade banana bread","price":"4,80"},{"name":"Pastries","desc":"Dagelijks vers gebakken","price":"4,50"}]},{"section":"Extra","items":[{"name":"Matcha Latte","desc":"Ceremonial grade matcha","price":"5,50"},{"name":"Oat Milk Upgrade","desc":"Havermelk","price":"0,50"},{"name":"Coffee Beans","desc":"House roasted bonen","price":"Vanaf 16,00"}]}],
+    "why": [
+      "Eén van de bekendste specialty coffee bars van Brussel",
+      "Aparte laptopruimte achteraan",
+      "House-roasted koffiebonen",
+      "Rustige Scandinavische sfeer",
+      "Populair bij studenten en freelancers"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Payconiq"
+    ],
+    "hours": {
+      "Maandag": "08:00 – 18:00",
+      "Dinsdag": "08:00 – 18:00",
+      "Woensdag": "08:00 – 18:00",
+      "Donderdag": "08:00 – 18:00",
+      "Vrijdag": "08:00 – 18:00",
+      "Zaterdag": "10:00 – 18:00",
+      "Zondag": "10:00 – 18:00"
+    },
+    "menu": [
+      {
+        "section": "Koffie",
+        "items": [
+          {
+            "name": "Espresso",
+            "desc": "House roast espresso",
+            "price": "3,00"
+          },
+          {
+            "name": "Flat White",
+            "desc": "Dubbele espresso met melk",
+            "price": "4,50"
+          },
+          {
+            "name": "Filter Coffee",
+            "desc": "Single origin hand brew",
+            "price": "5,50"
+          },
+          {
+            "name": "Nitro Coffee",
+            "desc": "Cold brew van het vat",
+            "price": "5,80"
+          }
+        ]
+      },
+      {
+        "section": "Ontbijt & lunch",
+        "items": [
+          {
+            "name": "Avocado Toast",
+            "desc": "Zuurdesembrood & kruiden",
+            "price": "13,50"
+          },
+          {
+            "name": "Seasonal Brunch",
+            "desc": "Vegetarische lunch van het seizoen",
+            "price": "15,00"
+          },
+          {
+            "name": "Banana Bread",
+            "desc": "Housemade banana bread",
+            "price": "4,80"
+          },
+          {
+            "name": "Pastries",
+            "desc": "Dagelijks vers gebakken",
+            "price": "4,50"
+          }
+        ]
+      },
+      {
+        "section": "Extra",
+        "items": [
+          {
+            "name": "Matcha Latte",
+            "desc": "Ceremonial grade matcha",
+            "price": "5,50"
+          },
+          {
+            "name": "Oat Milk Upgrade",
+            "desc": "Havermelk",
+            "price": "0,50"
+          },
+          {
+            "name": "Coffee Beans",
+            "desc": "House roasted bonen",
+            "price": "Vanaf 16,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "bouche", "name": "BOUCHE Specialty Coffee",
-    "coords": [50.841842, 4.359421],
-    "walk": 31, "bike": 11, "transit": 16,
-    "address": "Rue de Namur 4, 1000 Bruxelles", "phone": "+32493299802", "website": null,
-    "price": 2, "color": "#B88A6A", "favorite": true,
-    "cats": ["Drinken","Studeren","Eten"],
+    "id": "bouche",
+    "name": "BOUCHE Specialty Coffee",
+    "coords": [
+      50.841842,
+      4.359421
+    ],
+    "walk": 40,
+    "bike": 11,
+    "transit": 16,
+    "address": "Rue de Namur 4, 1000 Bruxelles",
+    "phone": "+32493299802",
+    "website": null,
+    "price": 2,
+    "color": "#B88A6A",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Studeren",
+      "Eten"
+    ],
     "desc": "Specialty coffee vlak bij Naamsepoort met minimalistische inrichting en focus op filter coffee.",
     "long": "BOUCHE is een specialty coffee bar in het centrum van Brussel met focus op high-end filter coffee en Europese specialty roasters. De ruimte heeft een minimalistische inrichting met grote stenen toog en rustige sfeer.",
     "tips": "In het weekend vaak erg druk volgens online reviews.",
     "student_perk": "Wifi beschikbaar",
-    "why": ["Bekend in de Brusselse specialty coffee scene","Focus op filter coffee en guest roasters","Minimalistisch interieur","Populair bij koffieliefhebbers","Goede locatie vlak bij centrum"],
-    "payments": ["Bancontact","Cash"],
-    "hours": {"Maandag":"07:30 – 18:00","Dinsdag":"07:30 – 18:00","Woensdag":"07:30 – 18:00","Donderdag":"07:30 – 18:00","Vrijdag":"07:30 – 18:00","Zaterdag":"09:00 – 18:00","Zondag":"09:00 – 18:00"},
-    "menu": [{"section":"Koffie","items":[{"name":"Espresso","desc":"Specialty espresso","price":"3,60"},{"name":"Milk Drinks","desc":"Latte / cappuccino","price":"4,60 – 5,20"},{"name":"Filter Coffee","desc":"Hand brew / batch brew","price":"—"}]},{"section":"Food","items":[{"name":"Pastries","desc":"Dagelijks aanbod pastries","price":"—"}]}],
+    "why": [
+      "Bekend in de Brusselse specialty coffee scene",
+      "Focus op filter coffee en guest roasters",
+      "Minimalistisch interieur",
+      "Populair bij koffieliefhebbers",
+      "Goede locatie vlak bij centrum"
+    ],
+    "payments": [
+      "Bancontact",
+      "Cash"
+    ],
+    "hours": {
+      "Maandag": "07:30 – 18:00",
+      "Dinsdag": "07:30 – 18:00",
+      "Woensdag": "07:30 – 18:00",
+      "Donderdag": "07:30 – 18:00",
+      "Vrijdag": "07:30 – 18:00",
+      "Zaterdag": "09:00 – 18:00",
+      "Zondag": "09:00 – 18:00"
+    },
+    "menu": [
+      {
+        "section": "Koffie",
+        "items": [
+          {
+            "name": "Espresso",
+            "desc": "Specialty espresso",
+            "price": "3,60"
+          },
+          {
+            "name": "Milk Drinks",
+            "desc": "Latte / cappuccino",
+            "price": "4,60 – 5,20"
+          },
+          {
+            "name": "Filter Coffee",
+            "desc": "Hand brew / batch brew",
+            "price": "—"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Pastries",
+            "desc": "Dagelijks aanbod pastries",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "taes", "name": "Tae's sandwich",
-    "coords": [50.84772931448716, 4.361518750700231],
-    "walk": 26, "bike": 9, "transit": 14,
-    "address": "Rue du Gentilhomme 5, 1000 Bruxelles", "phone": "+32470866835", "website": null,
-    "price": 1, "color": "#C96A3D", "favorite": true,
-    "cats": ["Eten"],
+    "id": "taes",
+    "name": "Tae's sandwich",
+    "coords": [
+      50.84772931448716,
+      4.361518750700231
+    ],
+    "walk": 40,
+    "bike": 9,
+    "transit": 14,
+    "address": "Rue du Gentilhomme 5, 1000 Bruxelles",
+    "phone": "+32470866835",
+    "website": null,
+    "price": 1,
+    "color": "#C96A3D",
+    "favorite": true,
+    "cats": [
+      "Eten"
+    ],
     "desc": "Kleine sandwichzaak in centrum Brussel met rijk belegde broodjes en vriendelijke service.",
     "long": "Tae's sandwich is een kleine broodjeszaak in het centrum van Brussel. Online reviews vermelden vooral de vriendelijke service, verse producten en goed belegde sandwiches.",
     "tips": "Vooral geschikt voor snelle lunch. Openingsuren lijken beperkt.",
     "student_perk": null,
-    "why": ["Verse ingrediënten volgens reviews","Goed belegde sandwiches","Kleine lokale zaak","Snelle lunchspot","Vriendelijke bediening"],
-    "payments": ["Bancontact","Cash"],
-    "hours": {"Maandag":"11:15 – 15:30","Dinsdag":"11:15 – 15:30","Woensdag":"11:15 – 15:30","Donderdag":"Gesloten","Vrijdag":"Gesloten","Zaterdag":"Gesloten","Zondag":"Gesloten"},
-    "menu": [{"section":"Broodjes","items":[{"name":"Chicken Sandwich","desc":"Kipbroodje","price":"—"},{"name":"Vegetarian Sandwich","desc":"Vegetarische optie beschikbaar","price":"—"},{"name":"Homemade Dessert","desc":"Huisgemaakt dessert volgens reviews","price":"—"}]}],
+    "why": [
+      "Verse ingrediënten volgens reviews",
+      "Goed belegde sandwiches",
+      "Kleine lokale zaak",
+      "Snelle lunchspot",
+      "Vriendelijke bediening"
+    ],
+    "payments": [
+      "Bancontact",
+      "Cash"
+    ],
+    "hours": {
+      "Maandag": "11:15 – 15:30",
+      "Dinsdag": "11:15 – 15:30",
+      "Woensdag": "11:15 – 15:30",
+      "Donderdag": "Gesloten",
+      "Vrijdag": "Gesloten",
+      "Zaterdag": "Gesloten",
+      "Zondag": "Gesloten"
+    },
+    "menu": [
+      {
+        "section": "Broodjes",
+        "items": [
+          {
+            "name": "Chicken Sandwich",
+            "desc": "Kipbroodje",
+            "price": "—"
+          },
+          {
+            "name": "Vegetarian Sandwich",
+            "desc": "Vegetarische optie beschikbaar",
+            "price": "—"
+          },
+          {
+            "name": "Homemade Dessert",
+            "desc": "Huisgemaakt dessert volgens reviews",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "fritland", "name": "Fritland",
-    "coords": [50.84772289252201, 4.349910972230997],
-    "walk": 24, "bike": 8, "transit": 13,
-    "address": "Rue Henri Maus 19, 1000 Bruxelles", "phone": "+3225140627", "website": "http://fritlandbrussels.be/acceuil",
-    "price": 1, "color": "#D6A02C", "favorite": true,
-    "cats": ["Eten","Drinken"],
+    "id": "fritland",
+    "name": "Fritland",
+    "coords": [
+      50.84772289252201,
+      4.349910972230997
+    ],
+    "walk": 28,
+    "bike": 8,
+    "transit": 13,
+    "address": "Rue Henri Maus 19, 1000 Bruxelles",
+    "phone": "+3225140627",
+    "website": "http://fritlandbrussels.be/acceuil",
+    "price": 1,
+    "color": "#D6A02C",
+    "favorite": true,
+    "cats": [
+      "Eten",
+      "Drinken"
+    ],
     "desc": "Legendarische Brusselse frituur vlak bij de Beurs. Grote porties, lange wachtrijen en open tot laat.",
     "long": "Fritland is één van de bekendste frituren van Brussel en bestaat sinds 1978. De zaak ligt vlak bij de Beurs en staat bekend om Belgische frieten, mitraillettes en late-night fastfood.",
     "tips": "Na 22u vaak erg druk. Veel mensen nemen hun frieten mee richting Grote Markt.",
     "student_perk": null,
-    "why": ["Bekende Brusselse frituur sinds 1978","Open tot laat in de nacht","Grote porties frieten","Vlak bij de Beurs","Populaire stop na het uitgaan"],
-    "payments": ["Cash","Bancontact"],
-    "hours": {"Maandag":"11:00 – 01:00","Dinsdag":"11:00 – 01:00","Woensdag":"11:00 – 01:00","Donderdag":"11:00 – 03:00","Vrijdag":"11:00 – 03:00","Zaterdag":"11:00 – 03:00","Zondag":"11:00 – 01:00"},
-    "menu": [{"section":"Frieten & snacks","items":[{"name":"Verse frieten","desc":"Belgische frieten","price":"3,50 – 5,50"},{"name":"Mitraillette","desc":"Broodje met frieten en snack","price":"8,00"},{"name":"Fricadelle","desc":"Klassieke Belgische snack","price":"3,00"},{"name":"Bicky Burger","desc":"Belgische fastfoodklassieker","price":"5,00"}]},{"section":"Sauzen","items":[{"name":"Andalouse","desc":"Pittige Belgische saus","price":"1,00"},{"name":"Samurai","desc":"Pikante mayo","price":"1,00"},{"name":"Tartaar","desc":"Klassieke frituursaus","price":"1,00"}]}],
+    "why": [
+      "Bekende Brusselse frituur sinds 1978",
+      "Open tot laat in de nacht",
+      "Grote porties frieten",
+      "Vlak bij de Beurs",
+      "Populaire stop na het uitgaan"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact"
+    ],
+    "hours": {
+      "Maandag": "11:00 – 01:00",
+      "Dinsdag": "11:00 – 01:00",
+      "Woensdag": "11:00 – 01:00",
+      "Donderdag": "11:00 – 03:00",
+      "Vrijdag": "11:00 – 03:00",
+      "Zaterdag": "11:00 – 03:00",
+      "Zondag": "11:00 – 01:00"
+    },
+    "menu": [
+      {
+        "section": "Frieten & snacks",
+        "items": [
+          {
+            "name": "Verse frieten",
+            "desc": "Belgische frieten",
+            "price": "3,50 – 5,50"
+          },
+          {
+            "name": "Mitraillette",
+            "desc": "Broodje met frieten en snack",
+            "price": "8,00"
+          },
+          {
+            "name": "Fricadelle",
+            "desc": "Klassieke Belgische snack",
+            "price": "3,00"
+          },
+          {
+            "name": "Bicky Burger",
+            "desc": "Belgische fastfoodklassieker",
+            "price": "5,00"
+          }
+        ]
+      },
+      {
+        "section": "Sauzen",
+        "items": [
+          {
+            "name": "Andalouse",
+            "desc": "Pittige Belgische saus",
+            "price": "1,00"
+          },
+          {
+            "name": "Samurai",
+            "desc": "Pikante mayo",
+            "price": "1,00"
+          },
+          {
+            "name": "Tartaar",
+            "desc": "Klassieke frituursaus",
+            "price": "1,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "biamara", "name": "Bia Mara",
-    "coords": [50.848637023774536, 4.350734920398734],
-    "walk": 24, "bike": 8, "transit": 13,
-    "address": "Rue du Marché aux Poulets 41, 1000 Bruxelles", "phone": "+3225020061", "website": "https://www.biamara.com/",
-    "price": 2, "color": "#2E5B7A", "favorite": true,
-    "cats": ["Eten","Drinken"],
+    "id": "biamara",
+    "name": "Bia Mara",
+    "coords": [
+      50.848637023774536,
+      4.350734920398734
+    ],
+    "walk": 30,
+    "bike": 8,
+    "transit": 13,
+    "address": "Rue du Marché aux Poulets 41, 1000 Bruxelles",
+    "phone": "+3225020061",
+    "website": "https://www.biamara.com/",
+    "price": 2,
+    "color": "#2E5B7A",
+    "favorite": true,
+    "cats": [
+      "Eten",
+      "Drinken"
+    ],
     "desc": "Populaire fish & chips spot vlak bij de Beurs met duurzame vis, homemade sauzen en creatieve smaken.",
     "long": "Bia Mara is één van de bekendste fish & chips restaurants van Brussel. De zaak staat bekend om duurzame vissoorten, lichte krokante batter en homemade sauzen met internationale smaken.",
     "tips": "Vrijdag- en zaterdagavond vaak lange wachtrij. Lunch is meestal rustiger.",
     "student_perk": null,
-    "why": ["Bekende fish & chips spot in Brussel","Duurzame vis en homemade sauzen","Creatieve smaken en toppings","Vlak bij de Beurs","Populair bij toeristen én locals"],
-    "payments": ["Cash","Bancontact"],
-    "hours": {"Maandag":"12:00 – 14:00 / 18:00 – 21:00","Dinsdag":"12:00 – 14:00 / 18:00 – 21:00","Woensdag":"12:00 – 14:00 / 18:00 – 21:00","Donderdag":"12:00 – 14:00 / 18:00 – 21:00","Vrijdag":"12:00 – 14:00 / 18:00 – 22:00","Zaterdag":"12:00 – 22:00","Zondag":"12:00 – 15:00 / 18:00 – 21:00"},
-    "menu": [{"section":"Fish & Chips","items":[{"name":"Classic Panko","desc":"Krokante vis met frieten","price":"13,00"},{"name":"Lemon & Basil Tempura","desc":"Tempura fish met frisse kruiden","price":"14,50"},{"name":"Indian Spiced Panko","desc":"Fish & chips met curry-lime saus","price":"14,50"}]},{"section":"Sides","items":[{"name":"Sweet Potato Fries","desc":"Zoete aardappelfrietjes","price":"4,00"},{"name":"Minty Mushy Peas","desc":"Klassieke mushy peas","price":"4,00"},{"name":"Vietnamese Salad","desc":"Frisse salade","price":"4,00"}]},{"section":"Sauzen","items":[{"name":"Garlic Truffle Sauce","desc":"Knoflook & truffel","price":"1,00"},{"name":"Jalapeño Lime Sauce","desc":"Pikant en fris","price":"1,00"},{"name":"Homemade Tartar","desc":"Huisgemaakte tartaar","price":"1,00"}]}],
+    "why": [
+      "Bekende fish & chips spot in Brussel",
+      "Duurzame vis en homemade sauzen",
+      "Creatieve smaken en toppings",
+      "Vlak bij de Beurs",
+      "Populair bij toeristen én locals"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact"
+    ],
+    "hours": {
+      "Maandag": "12:00 – 14:00 / 18:00 – 21:00",
+      "Dinsdag": "12:00 – 14:00 / 18:00 – 21:00",
+      "Woensdag": "12:00 – 14:00 / 18:00 – 21:00",
+      "Donderdag": "12:00 – 14:00 / 18:00 – 21:00",
+      "Vrijdag": "12:00 – 14:00 / 18:00 – 22:00",
+      "Zaterdag": "12:00 – 22:00",
+      "Zondag": "12:00 – 15:00 / 18:00 – 21:00"
+    },
+    "menu": [
+      {
+        "section": "Fish & Chips",
+        "items": [
+          {
+            "name": "Classic Panko",
+            "desc": "Krokante vis met frieten",
+            "price": "13,00"
+          },
+          {
+            "name": "Lemon & Basil Tempura",
+            "desc": "Tempura fish met frisse kruiden",
+            "price": "14,50"
+          },
+          {
+            "name": "Indian Spiced Panko",
+            "desc": "Fish & chips met curry-lime saus",
+            "price": "14,50"
+          }
+        ]
+      },
+      {
+        "section": "Sides",
+        "items": [
+          {
+            "name": "Sweet Potato Fries",
+            "desc": "Zoete aardappelfrietjes",
+            "price": "4,00"
+          },
+          {
+            "name": "Minty Mushy Peas",
+            "desc": "Klassieke mushy peas",
+            "price": "4,00"
+          },
+          {
+            "name": "Vietnamese Salad",
+            "desc": "Frisse salade",
+            "price": "4,00"
+          }
+        ]
+      },
+      {
+        "section": "Sauzen",
+        "items": [
+          {
+            "name": "Garlic Truffle Sauce",
+            "desc": "Knoflook & truffel",
+            "price": "1,00"
+          },
+          {
+            "name": "Jalapeño Lime Sauce",
+            "desc": "Pikant en fris",
+            "price": "1,00"
+          },
+          {
+            "name": "Homemade Tartar",
+            "desc": "Huisgemaakte tartaar",
+            "price": "1,00"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "casco", "name": "CASCO",
-    "coords": [50.84811173316971, 4.351288739388422],
-    "walk": 24, "bike": 8, "transit": 13,
-    "address": "Rue de la Bourse 42, 1000 Bruxelles", "phone": null, "website": "https://cafecasco.be/",
-    "price": 2, "color": "#8A4F3D", "favorite": true,
-    "cats": ["Drinken","Eten","Chillen"],
+    "id": "casco",
+    "name": "CASCO",
+    "coords": [
+      50.84811173316971,
+      4.351288739388422
+    ],
+    "walk": 30,
+    "bike": 8,
+    "transit": 13,
+    "address": "Rue de la Bourse 42, 1000 Bruxelles",
+    "phone": null,
+    "website": "https://cafecasco.be/",
+    "price": 2,
+    "color": "#8A4F3D",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Eten",
+      "Chillen"
+    ],
     "desc": "Grote bar-brasserie aan de Beurs met cocktails, speciaalbier, terras en late-night sfeer.",
     "long": "CASCO is een grote café-brasserie vlak bij de Beurs in Brussel. Overdag komen mensen hier voor koffie, lunch of een terras, terwijl het 's avonds meer verandert in een levendige cocktailbar met muziek en DJ-sets.",
     "tips": "Vrijdag- en zaterdagavond erg druk. Terras is populair bij goed weer.",
     "student_perk": null,
-    "why": ["Groot terras aan de Beurs","Cocktails, bier en food op één plek","Open tot diep in de nacht","Vaak live DJ's en muziek","Populaire afspreekplek in centrum Brussel"],
-    "payments": ["Cash","Bancontact","Payconiq","Visa","Mastercard"],
-    "hours": {"Maandag":"11:00 – 01:30","Dinsdag":"11:00 – 01:30","Woensdag":"11:00 – 01:30","Donderdag":"11:00 – 01:30","Vrijdag":"11:00 – 03:30","Zaterdag":"11:00 – 03:30","Zondag":"11:00 – 01:30"},
-    "menu": [{"section":"Drinks","items":[{"name":"Cocktails","desc":"Klassieke en signature cocktails","price":"10,00 – 14,00"},{"name":"Belgische bieren","desc":"Lokale en internationale selectie","price":"4,00 – 7,00"},{"name":"Koffie","desc":"Espresso, cappuccino, latte","price":"3,00 – 5,00"}]},{"section":"Food","items":[{"name":"Burgers","desc":"Classic burgers met frieten","price":"15,00 – 18,00"},{"name":"Croquettes","desc":"Kaas- of garnaalkroketten","price":"—"},{"name":"Fingerfood","desc":"Nachos, onion rings, snacks","price":"—"}]}],
+    "why": [
+      "Groot terras aan de Beurs",
+      "Cocktails, bier en food op één plek",
+      "Open tot diep in de nacht",
+      "Vaak live DJ's en muziek",
+      "Populaire afspreekplek in centrum Brussel"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Payconiq",
+      "Visa",
+      "Mastercard"
+    ],
+    "hours": {
+      "Maandag": "11:00 – 01:30",
+      "Dinsdag": "11:00 – 01:30",
+      "Woensdag": "11:00 – 01:30",
+      "Donderdag": "11:00 – 01:30",
+      "Vrijdag": "11:00 – 03:30",
+      "Zaterdag": "11:00 – 03:30",
+      "Zondag": "11:00 – 01:30"
+    },
+    "menu": [
+      {
+        "section": "Drinks",
+        "items": [
+          {
+            "name": "Cocktails",
+            "desc": "Klassieke en signature cocktails",
+            "price": "10,00 – 14,00"
+          },
+          {
+            "name": "Belgische bieren",
+            "desc": "Lokale en internationale selectie",
+            "price": "4,00 – 7,00"
+          },
+          {
+            "name": "Koffie",
+            "desc": "Espresso, cappuccino, latte",
+            "price": "3,00 – 5,00"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Burgers",
+            "desc": "Classic burgers met frieten",
+            "price": "15,00 – 18,00"
+          },
+          {
+            "name": "Croquettes",
+            "desc": "Kaas- of garnaalkroketten",
+            "price": "—"
+          },
+          {
+            "name": "Fingerfood",
+            "desc": "Nachos, onion rings, snacks",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "gecko", "name": "Gecko Brunch & Cocktail Bar",
-    "coords": [50.848091838835856, 4.346728016400397],
-    "walk": 23, "bike": 8, "transit": 12,
-    "address": "Place Saint-Géry 16, 1000 Bruxelles", "phone": "+32485981088", "website": "https://m.facebook.com/Gecko-Brussels-165738870268888/",
-    "price": 2, "color": "#4E7C6D", "favorite": true,
-    "cats": ["Drinken","Eten","Chillen"],
+    "id": "gecko",
+    "name": "Gecko Brunch & Cocktail Bar",
+    "coords": [
+      50.848091838835856,
+      4.346728016400397
+    ],
+    "walk": 25,
+    "bike": 8,
+    "transit": 12,
+    "address": "Place Saint-Géry 16, 1000 Bruxelles",
+    "phone": "+32485981088",
+    "website": "https://m.facebook.com/Gecko-Brussels-165738870268888/",
+    "price": 2,
+    "color": "#4E7C6D",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Eten",
+      "Chillen"
+    ],
     "desc": "Populaire brunch- en cocktailbar op Sint-Goriksplein met groot terras en late openingsuren.",
     "long": "Gecko is een brunch- en cocktailbar aan het Sint-Goriksplein in Brussel. Online reviews noemen vooral de gezellige sfeer, cocktails, brunchgerechten en het grote terras.",
     "tips": "Vrijdag- en zaterdagavond meestal erg druk rond Sint-Goriksplein.",
     "student_perk": "Gratis wifi",
-    "why": ["Groot terras op Sint-Goriksplein","Cocktails en brunch op één plek","Open tot laat in het weekend","Centrale ligging in het centrum","Populair bij locals en toeristen"],
-    "payments": ["Cash","Bancontact","Visa","Mastercard"],
-    "hours": {"Maandag":"08:00 – 23:00","Dinsdag":"08:00 – 23:00","Woensdag":"08:00 – 23:00","Donderdag":"08:00 – 03:00","Vrijdag":"08:00 – 03:00","Zaterdag":"08:00 – 03:00","Zondag":"08:00 – 23:00"},
-    "menu": [{"section":"Brunch","items":[{"name":"Pancakes","desc":"Volgens reviews populair tijdens brunch","price":"—"},{"name":"Omelettes","desc":"Custom omelettes beschikbaar","price":"—"},{"name":"Toast & breakfast bowls","desc":"Ontbijt- en brunchopties","price":"—"}]},{"section":"Cocktails & drinks","items":[{"name":"Mojito","desc":"Vaak genoemd in reviews","price":"—"},{"name":"Classic Cocktails","desc":"Cocktailkaart met klassiekers","price":"—"},{"name":"Belgische bieren","desc":"Lokale bierselectie","price":"—"}]},{"section":"Food","items":[{"name":"Cheeseburger","desc":"Vermeld in online reviews","price":"—"},{"name":"Meatballs in tomato sauce","desc":"Kleine Belgische gerechten","price":"—"},{"name":"Croque Monsieur","desc":"Lunch/snack optie","price":"—"}]}],
+    "why": [
+      "Groot terras op Sint-Goriksplein",
+      "Cocktails en brunch op één plek",
+      "Open tot laat in het weekend",
+      "Centrale ligging in het centrum",
+      "Populair bij locals en toeristen"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Visa",
+      "Mastercard"
+    ],
+    "hours": {
+      "Maandag": "08:00 – 23:00",
+      "Dinsdag": "08:00 – 23:00",
+      "Woensdag": "08:00 – 23:00",
+      "Donderdag": "08:00 – 03:00",
+      "Vrijdag": "08:00 – 03:00",
+      "Zaterdag": "08:00 – 03:00",
+      "Zondag": "08:00 – 23:00"
+    },
+    "menu": [
+      {
+        "section": "Brunch",
+        "items": [
+          {
+            "name": "Pancakes",
+            "desc": "Volgens reviews populair tijdens brunch",
+            "price": "—"
+          },
+          {
+            "name": "Omelettes",
+            "desc": "Custom omelettes beschikbaar",
+            "price": "—"
+          },
+          {
+            "name": "Toast & breakfast bowls",
+            "desc": "Ontbijt- en brunchopties",
+            "price": "—"
+          }
+        ]
+      },
+      {
+        "section": "Cocktails & drinks",
+        "items": [
+          {
+            "name": "Mojito",
+            "desc": "Vaak genoemd in reviews",
+            "price": "—"
+          },
+          {
+            "name": "Classic Cocktails",
+            "desc": "Cocktailkaart met klassiekers",
+            "price": "—"
+          },
+          {
+            "name": "Belgische bieren",
+            "desc": "Lokale bierselectie",
+            "price": "—"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Cheeseburger",
+            "desc": "Vermeld in online reviews",
+            "price": "—"
+          },
+          {
+            "name": "Meatballs in tomato sauce",
+            "desc": "Kleine Belgische gerechten",
+            "price": "—"
+          },
+          {
+            "name": "Croque Monsieur",
+            "desc": "Lunch/snack optie",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "ausoleil", "name": "Au Soleil.",
-    "coords": [50.84560886718737, 4.348052048168494],
-    "walk": 25, "bike": 8, "transit": 13,
-    "address": "Rue du Marché au Charbon 86, 1000 Bruxelles", "phone": "+3225123430", "website": null,
-    "price": 1, "color": "#B46A43", "favorite": true,
-    "cats": ["Drinken","Chillen","Studeren"],
+    "id": "ausoleil",
+    "name": "Au Soleil.",
+    "coords": [
+      50.84560886718737,
+      4.348052048168494
+    ],
+    "walk": 27,
+    "bike": 8,
+    "transit": 13,
+    "address": "Rue du Marché au Charbon 86, 1000 Bruxelles",
+    "phone": "+3225123430",
+    "website": null,
+    "price": 1,
+    "color": "#B46A43",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Chillen",
+      "Studeren"
+    ],
     "desc": "Authentiek Brussels café in de Sint-Jacobswijk met groot terras, goedkope bieren en relaxte sfeer.",
     "long": "Au Soleil is een klassiek Brussels café in de Sint-Jacobswijk, vlak bij het centrum. Het café bestaat al jaren en staat bekend om zijn groot terras, goedkope Belgische bieren en relaxte sfeer. Overdag zitten hier vaak mensen rustig koffie te drinken, lezen of werken.",
     "tips": "Overdag relatief rustig. In de zomer zit het terras vaak helemaal vol.",
     "student_perk": "Wifi beschikbaar",
-    "why": ["Authentieke Brusselse café-sfeer","Groot terras bij goed weer","Goedkope Belgische bieren","Rustig overdag, levendig 's avonds","Populair bij locals"],
-    "payments": ["Cash","Bancontact"],
-    "hours": {"Maandag":"09:30 – 01:00","Dinsdag":"09:30 – 01:00","Woensdag":"09:30 – 01:00","Donderdag":"09:30 – 01:00","Vrijdag":"09:30 – 02:00","Zaterdag":"09:30 – 02:00","Zondag":"09:30 – 00:00"},
-    "menu": [{"section":"Drinks","items":[{"name":"Belgische bieren","desc":"Chimay, Ciney, Westmalle","price":"3,50 – 6,00"},{"name":"Koffie","desc":"Espresso en klassieke koffie","price":"—"},{"name":"Cocktails","desc":"Klassieke cocktails beschikbaar","price":"—"}]},{"section":"Food","items":[{"name":"Croque Monsieur","desc":"Kleine cafégerechten","price":"—"},{"name":"Pasta bolo","desc":"Volgens Brusselse cafégidsen","price":"—"},{"name":"Soep","desc":"Kleine lunchoptie","price":"—"}]}],
+    "why": [
+      "Authentieke Brusselse café-sfeer",
+      "Groot terras bij goed weer",
+      "Goedkope Belgische bieren",
+      "Rustig overdag, levendig 's avonds",
+      "Populair bij locals"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact"
+    ],
+    "hours": {
+      "Maandag": "09:30 – 01:00",
+      "Dinsdag": "09:30 – 01:00",
+      "Woensdag": "09:30 – 01:00",
+      "Donderdag": "09:30 – 01:00",
+      "Vrijdag": "09:30 – 02:00",
+      "Zaterdag": "09:30 – 02:00",
+      "Zondag": "09:30 – 00:00"
+    },
+    "menu": [
+      {
+        "section": "Drinks",
+        "items": [
+          {
+            "name": "Belgische bieren",
+            "desc": "Chimay, Ciney, Westmalle",
+            "price": "3,50 – 6,00"
+          },
+          {
+            "name": "Koffie",
+            "desc": "Espresso en klassieke koffie",
+            "price": "—"
+          },
+          {
+            "name": "Cocktails",
+            "desc": "Klassieke cocktails beschikbaar",
+            "price": "—"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Croque Monsieur",
+            "desc": "Kleine cafégerechten",
+            "price": "—"
+          },
+          {
+            "name": "Pasta bolo",
+            "desc": "Volgens Brusselse cafégidsen",
+            "price": "—"
+          },
+          {
+            "name": "Soep",
+            "desc": "Kleine lunchoptie",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   },
   {
-    "id": "mortsubite", "name": "À La Mort Subite",
-    "coords": [50.84862915991566, 4.356252575313457],
-    "walk": 23, "bike": 8, "transit": 12,
-    "address": "Rue Montagne aux Herbes Potagères 7, 1000 Bruxelles", "phone": "+3225131318", "website": "https://www.alamortsubite.com/",
-    "price": 2, "color": "#7B5A42", "favorite": true,
-    "cats": ["Drinken","Chillen","Eten"],
+    "id": "mortsubite",
+    "name": "À La Mort Subite",
+    "coords": [
+      50.84862915991566,
+      4.356252575313457
+    ],
+    "walk": 35,
+    "bike": 8,
+    "transit": 12,
+    "address": "Rue Montagne aux Herbes Potagères 7, 1000 Bruxelles",
+    "phone": "+3225131318",
+    "website": "https://www.alamortsubite.com/",
+    "price": 2,
+    "color": "#7B5A42",
+    "favorite": true,
+    "cats": [
+      "Drinken",
+      "Chillen",
+      "Eten"
+    ],
     "desc": "Iconisch historisch Brussels café met art deco interieur, lambiekbier en oude Brusselse sfeer.",
     "long": "À La Mort Subite is één van de bekendste historische cafés van Brussel. Het café bestaat sinds de jaren 1920 en staat bekend om zijn indrukwekkende art deco interieur, houten banken en traditionele lambiekbieren.",
     "tips": "Vaak erg druk door toeristen. Mooiste moment is in de late namiddag wanneer het iets rustiger is.",
     "student_perk": null,
-    "why": ["Historisch Brussels café sinds de jaren 1920","Iconisch art deco interieur","Bekend voor lambiek- en geuzebieren","Unieke oude Brusselse sfeer","Populaire stop voor toeristen én locals"],
-    "payments": ["Cash","Bancontact","Visa","Mastercard"],
-    "hours": {"Maandag":"11:00 – 23:00","Dinsdag":"11:00 – 23:00","Woensdag":"11:00 – 23:00","Donderdag":"11:00 – 23:00","Vrijdag":"11:00 – 23:00","Zaterdag":"11:00 – 23:00","Zondag":"Gesloten"},
-    "menu": [{"section":"Bieren","items":[{"name":"Mort Subite Lambic","desc":"Klassieke lambiek","price":"—"},{"name":"Kriek","desc":"Belgisch fruitbier","price":"—"},{"name":"Geuze","desc":"Traditioneel Brussels bier","price":"—"}]},{"section":"Food","items":[{"name":"Croques","desc":"Klassieke cafégerechten","price":"—"},{"name":"Toast & snacks","desc":"Kleine gerechten","price":"—"},{"name":"Desserts","desc":"Traditionele Brusselse desserts","price":"—"}]}],
+    "why": [
+      "Historisch Brussels café sinds de jaren 1920",
+      "Iconisch art deco interieur",
+      "Bekend voor lambiek- en geuzebieren",
+      "Unieke oude Brusselse sfeer",
+      "Populaire stop voor toeristen én locals"
+    ],
+    "payments": [
+      "Cash",
+      "Bancontact",
+      "Visa",
+      "Mastercard"
+    ],
+    "hours": {
+      "Maandag": "11:00 – 23:00",
+      "Dinsdag": "11:00 – 23:00",
+      "Woensdag": "11:00 – 23:00",
+      "Donderdag": "11:00 – 23:00",
+      "Vrijdag": "11:00 – 23:00",
+      "Zaterdag": "11:00 – 23:00",
+      "Zondag": "Gesloten"
+    },
+    "menu": [
+      {
+        "section": "Bieren",
+        "items": [
+          {
+            "name": "Mort Subite Lambic",
+            "desc": "Klassieke lambiek",
+            "price": "—"
+          },
+          {
+            "name": "Kriek",
+            "desc": "Belgisch fruitbier",
+            "price": "—"
+          },
+          {
+            "name": "Geuze",
+            "desc": "Traditioneel Brussels bier",
+            "price": "—"
+          }
+        ]
+      },
+      {
+        "section": "Food",
+        "items": [
+          {
+            "name": "Croques",
+            "desc": "Klassieke cafégerechten",
+            "price": "—"
+          },
+          {
+            "name": "Toast & snacks",
+            "desc": "Kleine gerechten",
+            "price": "—"
+          },
+          {
+            "name": "Desserts",
+            "desc": "Traditionele Brusselse desserts",
+            "price": "—"
+          }
+        ]
+      }
+    ],
     "facilities": null
   }
 ]
