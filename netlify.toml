@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/spots"
+  to = "/.netlify/functions/spots"
+  status = 200
+
+[[redirects]]
+  from = "/api/spot"
+  to = "/.netlify/functions/spot"
+  status = 200
