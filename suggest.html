@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Suggesteer een spot — KaaiSpots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .lab { max-width: 980px; margin: 0 auto; padding: 28px 18px 80px; }
+  .lab h1 { font-size: 28px; margin: 8px 0 4px; }
+  .lab .lead { color: var(--muted); margin: 0 0 24px; max-width: 60ch; }
+  .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--line); margin-bottom: 0; flex-wrap: wrap; }
+  .tab {
+    appearance: none; background: transparent; border: 1px solid var(--line);
+    border-bottom: none; border-radius: 10px 10px 0 0;
+    padding: 10px 14px; font-weight: 600; font-size: 14px;
+    color: var(--ink-2); margin-bottom: -1px; cursor: pointer;
+  }
+  .tab[aria-selected="true"] { background: var(--bg-elev); border-color: var(--line-2); color: var(--ink); }
+  .panel { display: none; background: var(--bg-elev); border: 1px solid var(--line-2); border-radius: 0 10px 10px 10px; padding: 16px; }
+  .panel[data-active="true"] { display: block; }
+  .panel iframe { width: 100%; min-height: 720px; border: 0; border-radius: 8px; background: #fff; }
+  .panel .placeholder {
+    border: 1px dashed var(--line-2); border-radius: 8px; padding: 28px;
+    color: var(--muted); font-family: "JetBrains Mono", monospace; font-size: 13px;
+    text-align: center;
+  }
+  .meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted); margin: 10px 0 14px; }
+  .meta a { color: var(--accent); text-decoration: none; }
+  .vote { margin-top: 14px; display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); }
+  .back { display: inline-block; margin-bottom: 12px; font-size: 13px; color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<main class="lab">
+  <a class="back" href="index.html">&larr; terug naar kaart</a>
+  <h1>Suggesteer een spot</h1>
+  <p class="lead">
+    We testen 3 form-tools om te zien welke het beste past bij KaaiSpots
+    (chill / vibe / eten tijdens of rond school). Probeer ze gerust alle drie —
+    we kiezen daarna één winnaar en zetten die live op de hoofdpagina.
+  </p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true"  data-target="tally">Tally</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="google">Google Forms</button>
+    <button class="tab" role="tab" aria-selected="false" data-target="typeform">Typeform</button>
+  </div>
+
+  <section class="panel" data-active="true" id="tally" role="tabpanel">
+    <div class="meta">
+      <span>Tool: <strong>Tally</strong></span>
+      <span>Status: <em>nog in te vullen</em></span>
+      <a href="https://tally.so" target="_blank" rel="noopener">tally.so</a>
+    </div>
+    <iframe src="https://tally.so/embed/obKK0b?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" title="Tally — Suggesteer een spot"></iframe>
+    <div class="vote">Feedback achteraf in <a href="docs/Tally vs Google Forms.md">docs/Tally vs Google Forms.md</a></div>
+  </section>
+
+  <section class="panel" data-active="false" id="google" role="tabpanel">
+    <div class="meta">
+      <span>Tool: <strong>Google Forms</strong></span>
+      <span>Status: <em>nog in te vullen</em></span>
+      <a href="https://forms.google.com" target="_blank" rel="noopener">forms.google.com</a>
+    </div>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCXhlF_8TPp5V8xkX9zwZVf5ewz6-MGHH-UDU9qzZf4PDAhw/viewform?embedded=true"
+            loading="lazy" title="Google Forms — Suggesteer een spot">Laden…</iframe>
+  </section>
+
+  <section class="panel" data-active="false" id="typeform" role="tabpanel">
+    <div class="meta">
+      <span>Tool: <strong>Typeform</strong></span>
+      <span>Status: <em>nog in te vullen</em></span>
+      <a href="https://typeform.com" target="_blank" rel="noopener">typeform.com</a>
+    </div>
+    <iframe src="https://form.typeform.com/to/AnMkzP8O"
+            loading="lazy" title="Typeform — Suggesteer een spot"></iframe>
+  </section>
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t ? 'true' : 'false'));
+    panels.forEach(p => p.setAttribute('data-active', p.id === t.dataset.target ? 'true' : 'false'));
+  }));
+</script>
+</body>
+</html>
