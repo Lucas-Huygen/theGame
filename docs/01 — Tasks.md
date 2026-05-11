@@ -11,7 +11,7 @@
 - [ ] "Suggesteer een spot"-mailto vervangen door echt form
 
 ### Milan — frontend polish
-- [ ] "Open nu"-toggle echt laten filteren op `hours`
+- [x] "Open nu"-toggle echt laten filteren op `hours`
 - [ ] "Gratis"-chip echt laten filteren (`price === 0`)
 - [ ] Favicon + OG-image + meta description
 - [ ] Testen iPhone Safari + Android Chrome
