@@ -1,6 +1,9 @@
 /* ===== KaaiSpots — Data & Shared Logic ===== */
 window.CAMPUS = [50.84232308508647, 4.322822277113688];
 
+// Language management
+window.CURRENT_LANG = localStorage.getItem('kaaispots-lang') || 'nl';
+
 window.CAT_GLYPH = {
   Eten: '🥖', Drinken: '☕', Studeren: '📖',
   Chillen: '🌳', Cultuur: '◐', Gratis: '∅'
@@ -9,6 +12,127 @@ window.CAT_CLASS = {
   Eten: 'cat-eten', Drinken: 'cat-drinken', Studeren: 'cat-studeren',
   Chillen: 'cat-chillen', Cultuur: 'cat-cultuur', Gratis: 'cat-gratis'
 };
+
+// UI Text Translations
+window.I18N = {
+  nl: {
+    // Header & Navigation
+    tagline: 'door studenten, voor studenten',
+    backToMap: '← terug naar de kaart',
+    // Hero
+    heroTitle: 'De buurt rond Campus Kaai, <span class="accent">eindelijk in kaart gebracht.</span>',
+    heroDesc: '<strong>{count}</strong> plekken om te eten, studeren, chillen of gewoon te ontdekken — allemaal dicht bij campus Kaai.',
+    heroMeta: 'plekken',
+    heroLocation: 'Anderlecht · Kuregem · Sint-Gillis',
+    // Filter
+    openNow: 'Open nu',
+    reset: 'Reset ✕',
+    // Tabs
+    mapTab: 'Kaart',
+    listTab: 'Lijst',
+    // Categories
+    Eten: 'Eten',
+    Drinken: 'Drinken',
+    Studeren: 'Studeren',
+    Chillen: 'Chillen',
+    Cultuur: 'Cultuur',
+    Gratis: 'Gratis',
+    // List empty state
+    noSpotsFound: 'Geen spots gevonden',
+    noSpotsHelp: 'Probeer een filter weg te halen of klik reset.',
+    // Walk time
+    walkMinutes: 'min wandelen',
+    walkFrom: 'min wandelen vanaf campus',
+    bikeMinutes: 'min fietsen',
+    transitMinutes: 'min OV',
+    // Detail page
+    moreInfo: 'Meer info & menu →',
+    route: 'Route ↗',
+    notFound: 'Spot niet gevonden',
+    notFoundDesc: 'Geen spot met id "<span class="mono">{id}</span>". Misschien is hij verwijderd, of de link klopt niet.',
+    backLink: '← Terug naar de kaart',
+    favoriteTeam: '★ Favoriet van het team',
+    practical: 'Praktisch',
+    website: 'Ga naar website ↗',
+    address: 'Adres',
+    phone: 'Telefoon',
+    payment: 'Betaling',
+    openingHours: 'Openingsuren',
+    studentDiscount: 'Studentenvoordeel',
+    routeGoogle: 'Route via Google Maps →',
+    whatToEat: 'Wat ze verkopen',
+    whatToSee: 'Wat er te zien is',
+    facilities: 'Faciliteiten',
+    why: 'Waarom hier',
+    insiderTip: 'Insider tip'
+  },
+  en: {
+    // Header & Navigation
+    tagline: 'by students, for students',
+    backToMap: '← back to map',
+    // Hero
+    heroTitle: 'The neighborhood around Campus Kaai, <span class="accent">finally mapped out.</span>',
+    heroDesc: '<strong>{count}</strong> spots to eat, study, chill or simply discover — all close to Campus Kaai.',
+    heroMeta: 'spots',
+    heroLocation: 'Anderlecht · Kuregem · Sint-Gillis',
+    // Filter
+    openNow: 'Open now',
+    reset: 'Reset ✕',
+    // Tabs
+    mapTab: 'Map',
+    listTab: 'List',
+    // Categories
+    Eten: 'Food',
+    Drinken: 'Drinks',
+    Studeren: 'Study',
+    Chillen: 'Chill',
+    Cultuur: 'Culture',
+    Gratis: 'Free',
+    // List empty state
+    noSpotsFound: 'No spots found',
+    noSpotsHelp: 'Try removing a filter or click reset.',
+    // Walk time
+    walkMinutes: 'min walk',
+    walkFrom: 'min walk from campus',
+    bikeMinutes: 'min bike',
+    transitMinutes: 'min public transport',
+    // Detail page
+    moreInfo: 'More info & menu →',
+    route: 'Route ↗',
+    notFound: 'Spot not found',
+    notFoundDesc: 'No spot with id "<span class="mono">{id}</span>". It may have been deleted or the link is incorrect.',
+    backLink: '← Back to map',
+    favoriteTeam: '★ Team favorite',
+    practical: 'Practical info',
+    website: 'Visit website ↗',
+    address: 'Address',
+    phone: 'Phone',
+    payment: 'Payment',
+    openingHours: 'Opening hours',
+    studentDiscount: 'Student discount',
+    routeGoogle: 'Route via Google Maps →',
+    whatToEat: 'What they sell',
+    whatToSee: 'What to see',
+    facilities: 'Facilities',
+    why: 'Why visit here',
+    insiderTip: 'Insider tip'
+  }
+};
+
+function t(key, vars = {}) {
+  let text = window.I18N[window.CURRENT_LANG][key] || window.I18N.nl[key] || key;
+  Object.entries(vars).forEach(([k, v]) => {
+    text = text.replace('{' + k + '}', v);
+  });
+  return text;
+}
+
+function setLanguage(lang) {
+  window.CURRENT_LANG = lang;
+  localStorage.setItem('kaaispots-lang', lang);
+  document.documentElement.lang = lang;
+  location.reload();
+}
 
 (async () => {
   try {
@@ -25,6 +149,44 @@ window.CAT_CLASS = {
       console.error('KaaiSpots: kon spots niet laden');
       window.SPOTS = [];
     }
+  }
+
+  // Set document language
+  document.documentElement.lang = window.CURRENT_LANG;
+
+  // Language toggle handlers (on all pages)
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    const lang = btn.textContent.trim().toLowerCase();
+    btn.classList.toggle('on', lang === window.CURRENT_LANG);
+    btn.addEventListener('click', () => {
+      setLanguage(lang === 'nl' ? 'nl' : 'en');
+    });
+  });
+
+  // Update static UI text on main page
+  if (document.getElementById('spotTotalCount') || document.getElementById('spotCountHero')) {
+    const heroTitle = document.querySelector('.hero h1');
+    const heroDesc = document.querySelector('.hero p');
+    const openNowBtn = document.getElementById('openNow');
+    const resetBtn = document.getElementById('resetBtn');
+    const viewTabs = document.querySelectorAll('.view-tab');
+    
+    if (heroTitle && window.CURRENT_LANG === 'en') {
+      heroTitle.innerHTML = t('heroTitle');
+    }
+    if (heroDesc && window.CURRENT_LANG === 'en') {
+      heroDesc.innerHTML = t('heroDesc', { count: '{count}' });
+    }
+    if (openNowBtn && window.CURRENT_LANG === 'en') {
+      openNowBtn.querySelector('.label-text').textContent = t('openNow');
+    }
+    if (resetBtn && window.CURRENT_LANG === 'en') {
+      resetBtn.textContent = t('reset');
+    }
+    viewTabs.forEach(tab => {
+      const view = tab.dataset.view;
+      tab.textContent = view === 'map' ? t('mapTab') : t('listTab');
+    });
   }
 
   /* ===== Main Map & List Page Logic ===== */
@@ -72,13 +234,14 @@ window.CAT_CLASS = {
     }
 
     function popupHtml(spot) {
-      const tags = spot.cats.map(c => `<span class="tag ${CAT_CLASS[c]}">${c}</span>`).join('');
+      const tags = spot.cats.map(c => `<span class="tag ${CAT_CLASS[c]}">${t(c)}</span>`).join('');
       const priceTag = spot.price === 0
-        ? `<span class="tag cat-gratis">Gratis</span>`
+        ? `<span class="tag cat-gratis">${t('Gratis')}</span>`
         : `<span class="tag price">${'€'.repeat(spot.price)}</span>`;
-      const fav = spot.favorite ? `<span class="fav-badge" title="Favoriet">★</span>` : '';
+      const fav = spot.favorite ? `<span class="fav-badge" title="${t('favoriteTeam')}">★</span>` : '';
       const dest = `${spot.coords[0]},${spot.coords[1]}`;
       const url = `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=walking`;
+      const walkText = window.CURRENT_LANG === 'en' ? `${spot.walk} ${t('walkMinutes')}` : `${spot.walk} ${t('walkMinutes')}`;
       return `
         <div class="popup-thumb" style="background:${spot.color}">
           <div style="position:relative;z-index:1">${spot.name.toUpperCase()}</div>
@@ -88,10 +251,10 @@ window.CAT_CLASS = {
           <div class="popup-meta">${tags}${priceTag}</div>
           <p class="popup-desc">${spot.desc}</p>
           <div class="popup-actions">
-            <a class="btn-detail" href="spot.html?id=${spot.id}">Meer info & menu →</a>
+            <a class="btn-detail" href="spot.html?id=${spot.id}">${t('moreInfo')}</a>
             <div class="popup-actions-row">
-              <a class="btn-route-secondary" href="${url}" target="_blank" rel="noopener">Route ↗</a>
-              <span class="popup-walk mono">${spot.walk} min wandelen</span>
+              <a class="btn-route-secondary" href="${url}" target="_blank" rel="noopener">${t('route')}</a>
+              <span class="popup-walk mono">${walkText}</span>
             </div>
           </div>
         </div>
@@ -151,6 +314,13 @@ window.CAT_CLASS = {
       document.getElementById('spotCount').textContent = visible;
       const heroCount = document.getElementById('spotCountHero');
       if (heroCount) heroCount.textContent = visible;
+      
+      // Update hero description with spot count
+      const heroDesc = document.querySelector('.hero p');
+      if (heroDesc) {
+        heroDesc.innerHTML = t('heroDesc', { count: visible });
+      }
+      
       renderList();
     }
 
@@ -159,17 +329,18 @@ window.CAT_CLASS = {
       if (!list) return;
       const filtered = SPOTS.filter(spotMatches);
       if (filtered.length === 0) {
-        list.innerHTML = `<div class="empty"><strong>Geen spots gevonden</strong>Probeer een filter weg te halen of klik reset.</div>`;
+        list.innerHTML = `<div class="empty"><strong>${t('noSpotsFound')}</strong>${t('noSpotsHelp')}</div>`;
         return;
       }
       list.innerHTML = filtered.map(spot => {
-        const tags = spot.cats.slice(0,2).map(c => `<span class="tag ${CAT_CLASS[c]}">${c}</span>`).join('');
+        const tags = spot.cats.slice(0,2).map(c => `<span class="tag ${CAT_CLASS[c]}">${t(c)}</span>`).join('');
         const priceTag = spot.price === 0
-          ? `<span class="tag cat-gratis">Gratis</span>`
+          ? `<span class="tag cat-gratis">${t('Gratis')}</span>`
           : `<span class="tag price">${'€'.repeat(spot.price)}</span>`;
-        const fav = spot.favorite ? `<span class="fav-badge" title="Favoriet">★</span>` : '';
+        const fav = spot.favorite ? `<span class="fav-badge" title="${t('favoriteTeam')}">★</span>` : '';
         const active = state.active === spot.id ? 'active' : '';
         const thumbLabel = spot.name.length > 22 ? spot.name.slice(0, 20) + '…' : spot.name;
+        const walkText = window.CURRENT_LANG === 'en' ? `${spot.walk} ${t('walkFrom')}` : `${spot.walk} ${t('walkFrom')}`;
         return `
           <article class="spot-card ${active}" data-id="${spot.id}" tabindex="0">
             <div class="spot-thumb" style="background:${spot.color}">
@@ -183,7 +354,7 @@ window.CAT_CLASS = {
               <p class="spot-desc">${spot.desc.split('.')[0]}.</p>
               <div class="spot-foot mono">
                 <svg class="walk-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M13 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7.5 22l2-9-2.5-1v-5l4.5-2 3.5 2 2 4 2 1-1 2-3-1.5-1-2v3l3 4-1 4h-2l1-3-3-3-2 6h-2.5z"/></svg>
-                ${spot.walk} min wandelen vanaf campus
+                ${walkText}
               </div>
             </div>
           </article>
@@ -228,8 +399,17 @@ window.CAT_CLASS = {
     }
 
     document.querySelectorAll('#catChips .chip').forEach(btn => {
+      const cat = btn.dataset.cat;
+      // Update label if in English
+      if (window.CURRENT_LANG === 'en') {
+        const label = btn.querySelector('span:last-child') || btn;
+        if (btn.querySelector('span:last-child')) {
+          btn.querySelector('span:last-child').textContent = t(cat);
+        } else {
+          btn.textContent = t(cat);
+        }
+      }
       btn.addEventListener('click', () => {
-        const cat = btn.dataset.cat;
         if (state.cats.has(cat)) state.cats.delete(cat);
         else state.cats.add(cat);
         btn.classList.toggle('on');
@@ -300,22 +480,24 @@ window.CAT_CLASS = {
       if (!spot) {
         root.innerHTML = `
           <div class="notfound">
-            <h1>Spot niet gevonden</h1>
-            <p>Geen spot met id "<span class="mono">${id || ''}</span>". Misschien is hij verwijderd, of de link klopt niet.</p>
-            <p><a class="cta" href="index.html" style="display:inline-block;margin-top:12px">← Terug naar de kaart</a></p>
+            <h1>${t('notFound')}</h1>
+            <p>${t('notFoundDesc', { id: id || '' })}</p>
+            <p><a class="cta" href="index.html" style="display:inline-block;margin-top:12px">${t('backLink')}</a></p>
           </div>`;
         return;
       }
 
       document.title = `${spot.name} — KaaiSpots`;
 
-      const tags = spot.cats.map(c => `<span class="tag ${CAT_CLASS[c]}">${c}</span>`).join('');
+      const tags = spot.cats.map(c => `<span class="tag ${CAT_CLASS[c]}">${t(c)}</span>`).join('');
       const priceTag = spot.price === 0
-        ? `<span class="tag cat-gratis">Gratis</span>`
+        ? `<span class="tag cat-gratis">${t('Gratis')}</span>`
         : `<span class="tag price">${'€'.repeat(spot.price)}</span>`;
-      const favBadge = spot.favorite ? `<span class="badge fav">★ Favoriet van het team</span>` : '';
+      const favBadge = spot.favorite ? `<span class="badge fav">${t('favoriteTeam')}</span>` : '';
 
-      const days = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
+      const days = window.CURRENT_LANG === 'en' 
+        ? ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+        : ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
       const todayName = days[new Date().getDay()];
 
       let hoursHtml = '';
@@ -328,9 +510,12 @@ window.CAT_CLASS = {
 
       let menuHtml = '';
       if (spot.menu && spot.menu.length) {
+        const menuTitle = spot.cats.includes('Cultuur') && !spot.cats.includes('Eten') && !spot.cats.includes('Drinken') 
+          ? t('whatToSee') 
+          : t('whatToEat');
         menuHtml = `
           <section>
-            <h2 class="section-title">${spot.cats.includes('Cultuur') && !spot.cats.includes('Eten') && !spot.cats.includes('Drinken') ? 'Wat er te zien is' : 'Wat ze verkopen'}</h2>
+            <h2 class="section-title">${menuTitle}</h2>
             ${spot.menu.map(s => `
               <div class="menu-section">
                 <h3>${s.section}</h3>
@@ -341,7 +526,7 @@ window.CAT_CLASS = {
                         <div class="menu-name">${item.name}</div>
                         ${item.desc ? `<div class="menu-desc">${item.desc}</div>` : ''}
                       </div>
-                      <div class="menu-price ${/gratis/i.test(item.price) ? 'free' : ''}">${/^[0-9]/.test(item.price) ? '€ ' + item.price : item.price}</div>
+                      <div class="menu-price ${/gratis|free/i.test(item.price) ? 'free' : ''}">${/^[0-9]/.test(item.price) ? '€ ' + item.price : item.price}</div>
                     </div>
                   `).join('')}
                 </div>
@@ -354,7 +539,7 @@ window.CAT_CLASS = {
       if (spot.facilities && spot.facilities.length) {
         facilitiesHtml = `
           <section>
-            <h2 class="section-title">Faciliteiten</h2>
+            <h2 class="section-title">${t('facilities')}</h2>
             <div class="facilities">
               ${spot.facilities.map(f => `
                 <div class="facility">
@@ -369,7 +554,7 @@ window.CAT_CLASS = {
       if (spot.why && spot.why.length) {
         whyHtml = `
           <section>
-            <h2 class="section-title">Waarom hier</h2>
+            <h2 class="section-title">${t('why')}</h2>
             <ul class="why-list">${spot.why.map(w => `<li>${w}</li>`).join('')}</ul>
           </section>`;
       }
@@ -380,7 +565,7 @@ window.CAT_CLASS = {
           <section>
             <div class="tip">
               <div class="tip-glyph">i</div>
-              <div class="tip-body"><strong>Insider tip.</strong> ${spot.tips}</div>
+              <div class="tip-body"><strong>${t('insiderTip')}.</strong> ${spot.tips}</div>
             </div>
           </section>`;
       }
@@ -388,19 +573,10 @@ window.CAT_CLASS = {
       const dest = `${spot.coords[0]},${spot.coords[1]}`;
       const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=walking`;
 
-      let perkHtml = '';
-      if (spot.student_perk) {
-        perkHtml = `
-          <div class="perk-block">
-            <div class="label">Studentenvoordeel</div>
-            <div class="body">${spot.student_perk}</div>
-          </div>`;
-      }
-
       let paymentsHtml = '';
       if (spot.payments && spot.payments.length) {
         paymentsHtml = `
-          <dt>Betaling</dt>
+          <dt>${t('payment')}</dt>
           <dd>${spot.payments.join(', ')}</dd>
         `;
       }
@@ -408,23 +584,32 @@ window.CAT_CLASS = {
       let websiteHtml = '';
       if (spot.website) {
         websiteHtml = `
-          <dt>Website</dt>
+          <dt>${t('website')}</dt>
           <dd>
             <a class="btn-website" href="${spot.website}" target="_blank" rel="noopener">
-              Ga naar website ↗
+              ${t('website')} ↗
             </a>
           </dd>
         `;
       }
 
+      let perkHtml = '';
+      if (spot.student_perk) {
+        perkHtml = `
+          <div class="perk-block">
+            <div class="label">${t('studentDiscount')}</div>
+            <div class="body">${spot.student_perk}</div>
+          </div>`;
+      }
+
       root.innerHTML = `
         <div class="hero detail" style="background:${spot.color}">
           <div class="hero-inner">
-            <div class="crumb">${spot.cats.join(' · ')}</div>
+            <div class="crumb">${spot.cats.map(c => t(c)).join(' · ')}</div>
             <h1>${spot.name}</h1>
             <div class="meta-row">
               ${tags}${priceTag}
-              <span class="badge">${spot.walk} min wandelen${spot.bike ? ` · ${spot.bike} min fietsen` : ''}${spot.transit ? ` · ${spot.transit} min OV` : ''}</span>
+              <span class="badge">${spot.walk} ${t('walkMinutes')}${spot.bike ? ` · ${spot.bike} ${t('bikeMinutes')}` : ''}${spot.transit ? ` · ${spot.transit} ${t('transitMinutes')}` : ''}</span>
               ${favBadge}
             </div>
           </div>
@@ -447,27 +632,27 @@ window.CAT_CLASS = {
         <span class="led"></span><span class="open-label">…</span>
       </span>
 
-      <h3>Praktisch</h3>
+      <h3>${t('practical')}</h3>
 
       <dl class="kv">
 
         ${websiteHtml}
 
-        <dt>Adres</dt>
+        <dt>${t('address')}</dt>
         <dd>${spot.address || '—'}</dd>
 
         ${spot.phone ? `
-          <dt>Telefoon</dt>
+          <dt>${t('phone')}</dt>
           <dd>
             <a href="tel:${spot.phone.replace(/\s/g,'')}">${spot.phone}</a>
           </dd>
         ` : ''}
 
-        <dt>Vanaf campus</dt>
+        <dt>${t('walkFrom')}</dt>
         <dd>
-          ${spot.walk} min wandelen
-          ${spot.bike ? `, ${spot.bike} min fietsen` : ''}
-          ${spot.transit ? `, ${spot.transit} min OV` : ''}
+          ${spot.walk} ${t('walkMinutes')}
+          ${spot.bike ? `, ${spot.bike} ${t('bikeMinutes')}` : ''}
+          ${spot.transit ? `, ${spot.transit} ${t('transitMinutes')}` : ''}
         </dd>
 
         ${paymentsHtml}
@@ -478,14 +663,14 @@ window.CAT_CLASS = {
 
             ${hoursHtml ? `
             <div class="info-card">
-              <h3>Openingsuren</h3>
+              <h3>${t('openingHours')}</h3>
               ${hoursHtml}
             </div>` : ''}
 
             ${perkHtml}
 
-            <a class="cta" href="${routeUrl}" target="_blank" rel="noopener">Route via Google Maps →</a>
-            <a class="cta secondary" href="index.html">← Terug naar de kaart</a>
+            <a class="cta" href="${routeUrl}" target="_blank" rel="noopener">${t('routeGoogle')}</a>
+            <a class="cta secondary" href="index.html">${t('backLink')}</a>
           </aside>
         </div>`;
 
@@ -495,15 +680,18 @@ window.CAT_CLASS = {
         function showPill(isOpen, label) {
           pill.style.display = '';
           pill.classList.toggle('closed', !isOpen);
-          pill.querySelector('.open-label').textContent = isOpen ? 'Nu open' : 'Gesloten';
-          if (label && label !== 'Gesloten') pill.title = `Vandaag: ${label}`;
+          pill.querySelector('.open-label').textContent = isOpen ? (window.CURRENT_LANG === 'en' ? 'Open now' : 'Nu open') : (window.CURRENT_LANG === 'en' ? 'Closed' : 'Gesloten');
+          if (label && label !== 'Gesloten' && label !== 'Closed') pill.title = (window.CURRENT_LANG === 'en' ? 'Today: ' : 'Vandaag: ') + label;
         }
 
         function showFromDbHours() {
           if (!spot.hours) return;
-          const dayNames = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
+          const dayNames = window.CURRENT_LANG === 'en' 
+            ? ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+            : ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
           const todayEntry = spot.hours[dayNames[new Date().getDay()]];
-          if (todayEntry === 'Gesloten') { showPill(false, null); return; }
+          const closedLabel = window.CURRENT_LANG === 'en' ? 'Closed' : 'Gesloten';
+          if (todayEntry === 'Gesloten' || todayEntry === 'Closed') { showPill(false, null); return; }
           if (todayEntry) {
             const m = todayEntry.match(/(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})/);
             if (m) {
