@@ -25,8 +25,8 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 - [x] "Open nu"-toggle echt laten filteren op `hours` (nu mock)
 - [x] "Gratis"-categorie-chip echt laten filteren (`price === 0`)
 - [x] Favicon + OG-image + meta description toevoegen (voor sharing)
-- [ ] Testen op iPhone Safari + Android Chrome; mobile-default tab heroverwegen (`view-list` vs `view-map`)
-- [ ] Lighthouse-pass — accessibility + perf
+- [x] Testen op iPhone Safari + Android Chrome; mobile-default tab heroverwegen (`view-list` vs `view-map`)
+- [x] Lighthouse-pass — accessibility + perf
 
 **Zeno — content & data**
 - [ ] Verifieer alle 12 spots in `spots.js`: echte coords, openingsuren, prijzen, menu's, foto-rechten
