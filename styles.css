@@ -749,6 +749,16 @@ h2.section-title {
   display: inline-flex; align-items: center; gap: 6px;
 }
 .suggest-btn:hover { background: var(--ink); color: #fff; }
+.suggest-btn.secondary {
+  border-color: var(--line-2);
+  color: var(--ink-2);
+}
+.suggest-btn.secondary:hover {
+  background: var(--bg-elev);
+  color: var(--ink);
+  border-color: var(--ink-2);
+}
+.footer-actions { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
 /* ---------- mobile ---------- */
 .view-tabs { display: none; }
