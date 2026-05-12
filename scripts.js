@@ -151,6 +151,67 @@ function setLanguage(lang) {
     }
   }
 
+   // Load translations from Supabase for non-Dutch languages
+  async function loadTranslations() {
+    if (window.CURRENT_LANG === 'nl' || !window.SPOTS || window.SPOTS.length === 0) {
+      return; // No translations needed for Dutch
+    }
+    
+    try {
+      // Fetch all translations for the current language
+      const response = await fetch(
+        `https://oyqmyqqvwfkdtpmqepno.supabase.co/rest/v1/spot_translations?language=eq.${window.CURRENT_LANG}&select=*`,
+        {
+          headers: {
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95cW15cXF2d2ZrZHRwbXFlcG5vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDAxNjksImV4cCI6MTczMjc0MDE2OX0.RpVqXxLjVm5fVr5lN-nL-3vPaXJDBJ0Fn_rI5nPWBWw'
+          }
+        }
+      );
+      
+      if (!response.ok) {
+        console.warn('Supabase translation query failed:', response.status);
+        return;
+      }
+      
+      const translations = await response.json();
+      if (!Array.isArray(translations) || translations.length === 0) {
+        console.warn('No translations found in Supabase');
+        return;
+      }
+      
+      // Build translation map
+      const translationMap = {};
+      translations.forEach(t => {
+        translationMap[t.spot_id] = t;
+      });
+      
+      // Apply translations to spot objects
+      window.SPOTS.forEach(spot => {
+        const trans = translationMap[spot.id];
+        if (trans) {
+          if (trans.name) spot.name = trans.name;
+          if (trans.short_desc) spot.desc = trans.short_desc;
+          if (trans.long_desc) spot.long = trans.long_desc;
+          if (trans.tips) spot.tips = trans.tips;
+          if (trans.student_perk !== null && trans.student_perk !== undefined) {
+            spot.student_perk = trans.student_perk;
+          }
+          if (trans.why && Array.isArray(trans.why) && trans.why.length > 0) spot.why = trans.why;
+          if (trans.menu && Array.isArray(trans.menu) && trans.menu.length > 0) spot.menu = trans.menu;
+          if (trans.facilities && Array.isArray(trans.facilities) && trans.facilities.length > 0) spot.facilities = trans.facilities;
+        }
+      });
+      
+      console.log('Loaded translations for', Object.keys(translationMap).length, 'spots');
+    } catch (err) {
+      console.warn('Error loading translations from Supabase:', err.message);
+      // Silently continue with Dutch content
+    }
+  }
+  
+  // Wait for translations to load before rendering
+  await loadTranslations();
+
   // Set document language
   document.documentElement.lang = window.CURRENT_LANG;
 
@@ -538,11 +599,24 @@ function setLanguage(lang) {
         : ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
       const todayName = days[new Date().getDay()];
 
+      // Map Dutch day names to current language
+      const dayTranslationMap = {
+        'Zondag': 'Sunday',
+        'Maandag': 'Monday',
+        'Dinsdag': 'Tuesday',
+        'Woensdag': 'Wednesday',
+        'Donderdag': 'Thursday',
+        'Vrijdag': 'Friday',
+        'Zaterdag': 'Saturday'
+      };
+
       let hoursHtml = '';
       if (spot.hours) {
         hoursHtml = '<dl class="hours">' + Object.entries(spot.hours).map(([k, v]) => {
-          const isToday = k === todayName;
-          return `<dt class="${isToday ? 'today' : ''}">${k}</dt><dd>${v || ''}</dd>`;
+          const displayDay = window.CURRENT_LANG === 'en' ? dayTranslationMap[k] || k : k;
+          const isToday = displayDay === todayName;
+          const displayValue = window.CURRENT_LANG === 'en' && v === 'Gesloten' ? 'Closed' : v;
+          return `<dt class="${isToday ? 'today' : ''}">${displayDay}</dt><dd>${displayValue || ''}</dd>`;
         }).join('') + '</dl>';
       }
 
