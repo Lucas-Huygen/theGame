@@ -640,21 +640,21 @@ function setLanguage(lang) {
       }
 
       let menuHtml = '';
-      if (spot.menu && spot.menu.length) {
+      if (spot.menu && spot.menu.length && spot.menu.some(s => s && s.items && s.items.length)) {
         const menuTitle = spot.cats.includes('Cultuur') && !spot.cats.includes('Eten') && !spot.cats.includes('Drinken') 
           ? t('whatToSee') 
           : t('whatToEat');
         menuHtml = `
           <section>
             <h2 class="section-title">${menuTitle}</h2>
-            ${spot.menu.map(s => `
+            ${spot.menu.filter(s => s && s.items && s.items.length).map(s => `
               <div class="menu-section">
-                <h3>${s.section}</h3>
+                <h3>${s.section || 'Menu'}</h3>
                 <div class="menu-table">
                   ${s.items.map(item => `
                     <div class="menu-row">
                       <div>
-                        <div class="menu-name">${item.name}</div>
+                        <div class="menu-name">${item.name || ''}</div>
                         ${item.desc ? `<div class="menu-desc">${item.desc}</div>` : ''}
                       </div>
                       <div class="menu-price ${/gratis|free/i.test(item.price) ? 'free' : ''}">${/^[0-9]/.test(item.price) ? '€ ' + item.price : item.price}</div>
