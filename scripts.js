@@ -355,9 +355,9 @@ function setLanguage(lang) {
           <div class="popup-meta">${tags}${priceTag}</div>
           <p class="popup-desc">${spot.desc}</p>
           <div class="popup-actions">
-            <a class="btn-detail" href="spot.html?id=${spot.id}">${t('moreInfo')}</a>
+            <a class="btn-detail" href="spot.html?id=${spot.id}" data-track="more_info_click" data-track-spot="${spot.id}">${t('moreInfo')}</a>
             <div class="popup-actions-row">
-              <a class="btn-route-secondary" href="${url}" target="_blank" rel="noopener">${t('route')}</a>
+              <a class="btn-route-secondary" href="${url}" target="_blank" rel="noopener" data-track="route_click" data-track-spot="${spot.id}" data-track-source="popup">${t('route')}</a>
               <span class="popup-walk mono">${spot.walk} ${t('walkMinutes')}</span>
             </div>
           </div>
@@ -368,7 +368,10 @@ function setLanguage(lang) {
     SPOTS.forEach(spot => {
       const m = L.marker(spot.coords, { icon: makePin(spot) });
       m.bindPopup(popupHtml(spot), { closeButton: true, autoPanPadding: [40,40] });
-      m.on('click', () => setActive(spot.id, { fly: false }));
+      m.on('click', () => {
+        if (window.kst) window.kst.track('pin_click', { spot: spot.id, name: spot.name });
+        setActive(spot.id, { fly: false });
+      });
       m.on('popupclose', () => {
         if (state.active === spot.id) {
           state.active = null;
@@ -523,6 +526,7 @@ function setLanguage(lang) {
           else state.cats.add(cat);
           btn.classList.toggle('on');
         }
+        if (window.kst) window.kst.track('filter_use', { filter: 'category', value: cat });
         applyFilters();
       });
     });
@@ -538,6 +542,7 @@ function setLanguage(lang) {
           document.querySelector('#catChips .chip[data-cat="Gratis"]')?.classList.remove('on');
           btn.classList.add('on');
         }
+        if (window.kst) window.kst.track('filter_use', { filter: 'price', value: String(p) });
         applyFilters();
       });
     });
@@ -547,12 +552,14 @@ function setLanguage(lang) {
         state.openNow = !state.openNow;
         e.currentTarget.classList.toggle('on', state.openNow);
         e.currentTarget.setAttribute('aria-pressed', String(state.openNow));
+        if (window.kst) window.kst.track('filter_use', { filter: 'open_now', value: state.openNow ? 'on' : 'off' });
         applyFilters();
       });
     }
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
+        if (window.kst) window.kst.track('filter_use', { filter: 'reset', value: 'all' });
         state.cats.clear();
         state.price = null;
         document.querySelectorAll('#catChips .chip, #priceChips .chip').forEach(b => b.classList.remove('on'));
@@ -793,7 +800,7 @@ function setLanguage(lang) {
 
             ${perkHtml}
 
-            <a class="cta" href="${routeUrl}" target="_blank" rel="noopener">${t('routeGoogle')}</a>
+            <a class="cta" href="${routeUrl}" target="_blank" rel="noopener" data-track="route_click" data-track-spot="${spot.id}" data-track-source="detail">${t('routeGoogle')}</a>
             <a class="cta secondary" href="index.html">${t('backLink')}</a>
           </aside>
         </div>`;
