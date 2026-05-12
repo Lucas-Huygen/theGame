@@ -22,8 +22,8 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 - [x] "Suggesteer een spot"-mailto vervangen door een echt form → `suggest.html` embedt Tally / Google Forms / Typeform in tabs; vergelijking in `docs/Tally vs Google Forms.md`
 
 **Milan — frontend polish**
-- [ ] "Open nu"-toggle echt laten filteren op `hours` (nu mock)
-- [ ] "Gratis"-categorie-chip echt laten filteren (`price === 0`)
+- [x] "Open nu"-toggle echt laten filteren op `hours` (nu mock)
+- [x] "Gratis"-categorie-chip echt laten filteren (`price === 0`)
 - [ ] Favicon + OG-image + meta description toevoegen (voor sharing)
 - [ ] Testen op iPhone Safari + Android Chrome; mobile-default tab heroverwegen (`view-list` vs `view-map`)
 - [ ] Lighthouse-pass — accessibility + perf

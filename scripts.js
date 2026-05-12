@@ -509,9 +509,20 @@ function setLanguage(lang) {
         }
       }
       btn.addEventListener('click', () => {
-        if (state.cats.has(cat)) state.cats.delete(cat);
-        else state.cats.add(cat);
-        btn.classList.toggle('on');
+        if (cat === 'Gratis') {
+          if (state.price === 0) {
+            state.price = null;
+            btn.classList.remove('on');
+          } else {
+            state.price = 0;
+            document.querySelectorAll('#priceChips .chip').forEach(b => b.classList.remove('on'));
+            btn.classList.add('on');
+          }
+        } else {
+          if (state.cats.has(cat)) state.cats.delete(cat);
+          else state.cats.add(cat);
+          btn.classList.toggle('on');
+        }
         applyFilters();
       });
     });
@@ -524,6 +535,7 @@ function setLanguage(lang) {
         } else {
           state.price = p;
           document.querySelectorAll('#priceChips .chip').forEach(b => b.classList.remove('on'));
+          document.querySelector('#catChips .chip[data-cat="Gratis"]')?.classList.remove('on');
           btn.classList.add('on');
         }
         applyFilters();
