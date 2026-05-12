@@ -160,10 +160,10 @@ function setLanguage(lang) {
     try {
       // Fetch all translations for the current language
       const response = await fetch(
-        `https://oyqmyqqvwfkdtpmqepno.supabase.co/rest/v1/spot_translations?language=eq.${window.CURRENT_LANG}&select=*`,
+        `https://udjhfoyhvxlcsyscwxwt.supabase.co/rest/v1/spot_translations?language=eq.${window.CURRENT_LANG}&select=*`,
         {
           headers: {
-            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95cW15cXF2d2ZrZHRwbXFlcG5vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTE2NDAxNjksImV4cCI6MTczMjc0MDE2OX0.RpVqXxLjVm5fVr5lN-nL-3vPaXJDBJ0Fn_rI5nPWBWw'
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVkamhmb3lodnhsY3N5c2N3eHd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0NzcwNjgsImV4cCI6MjA5NDA1MzA2OH0.Wv4pFtNFAgWlYlcf3xCempNHO4B1AseNToBvEa_nIlg'
           }
         }
       );
