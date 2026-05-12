@@ -9,6 +9,7 @@
 - [x] Custom domein of subdomein
 - [x] GitHub-remote toevoegen + pushen
 - [x] "Suggesteer een spot"-mailto vervangen door echt form → `suggest.html` (lab met 3 tabs: Tally / Google Forms / Typeform)
+- [x] Anonieme analytics: Plausible + Umami parallel → `analytics.html` (side-by-side dashboards), events in `analytics.js` + `scripts.js`
 
 ### Milan — frontend polish
 - [x] "Open nu"-toggle echt laten filteren op `hours`

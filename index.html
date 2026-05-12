@@ -99,12 +99,24 @@
     <div><strong>Een project voor The Game</strong> · Erasmushogeschool Brussel · 2026</div>
     <div class="footer-team mono">team: Lucas · Milan · Zeno</div>
   </div>
-  <a class="suggest-btn" href="suggest.html">+ Suggesteer een spot</a>
+  <a class="suggest-btn" href="suggest.html" data-track="suggest_open" data-track-source="footer">+ Suggesteer een spot</a>
 </footer>
 
 <!-- ============== SCRIPTS ============== -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<!-- Analytics: Plausible + Umami draaien parallel zodat we kunnen vergelijken.
+     Vervang data-domain (kaaispots.be) en data-website-id (UMAMI_WEBSITE_ID)
+     met je echte waarden zodra de accounts staan. -->
+<script async src="https://plausible.io/js/pa-6824FNV5vCWbIJhqIEWPs.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="5e96ff9b-2395-44f9-b63d-753adfc6fc2a"></script>
+<script src="analytics.js"></script>
+
 <script src="scripts.js"></script>
 </body>
 </html>

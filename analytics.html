@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Analytics lab — KaaiSpots</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .lab { max-width: 1400px; margin: 0 auto; padding: 28px 18px 80px; }
+  .lab h1 { font-size: 28px; margin: 8px 0 4px; }
+  .lab .lead { color: var(--muted); margin: 0 0 24px; max-width: 70ch; }
+  .back { display: inline-block; margin-bottom: 12px; font-size: 13px; color: var(--accent); text-decoration: none; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  @media (max-width: 900px) { .split { grid-template-columns: 1fr; } }
+
+  .col { background: var(--bg-elev); border: 1px solid var(--line-2); border-radius: 12px; padding: 14px; }
+  .col h2 { margin: 0 0 4px; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+  .col h2 .badge {
+    font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 500;
+    padding: 2px 8px; border-radius: 999px; background: var(--line); color: var(--ink-2);
+  }
+  .col h2 .badge.eu { background: #E7F5E8; color: #1F7A2E; }
+  .col h2 .badge.oss { background: #E8EEFB; color: #2A4D9C; }
+  .col h2 .badge.paid { background: #FBE8E8; color: #9C2A2A; }
+  .col .meta {
+    display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px;
+    color: var(--muted); margin: 4px 0 12px;
+  }
+  .col .meta a { color: var(--accent); text-decoration: none; }
+
+  .frame {
+    width: 100%; aspect-ratio: 4 / 3; min-height: 560px; border: 0;
+    border-radius: 8px; background: #fff;
+  }
+  .placeholder {
+    border: 1px dashed var(--line-2); border-radius: 8px; padding: 28px 18px;
+    color: var(--muted); font-family: "JetBrains Mono", monospace; font-size: 13px;
+    line-height: 1.6; min-height: 560px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .placeholder code { background: var(--bg); padding: 2px 6px; border-radius: 4px; color: var(--ink); }
+  .placeholder strong { color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: 14px; }
+
+  .events {
+    margin-top: 32px; background: var(--bg-elev);
+    border: 1px solid var(--line-2); border-radius: 12px; padding: 16px;
+  }
+  .events h2 { margin: 0 0 8px; font-size: 18px; }
+  .events table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .events th, .events td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  .events th { color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .events code { font-family: "JetBrains Mono", monospace; font-size: 12px; background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+
+  .tester {
+    margin-top: 16px; background: var(--accent-soft);
+    border: 1px solid var(--accent); border-radius: 10px; padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .tester strong { font-family: "Space Grotesk", sans-serif; font-size: 14px; }
+  .tester-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tester-buttons button {
+    appearance: none; border: 1px solid var(--ink); background: #fff;
+    border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+  }
+  .tester-buttons button:hover { background: var(--ink); color: #fff; }
+  .tester .hint { font-size: 12px; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<main class="lab">
+  <a class="back" href="index.html">&larr; terug naar kaart</a>
+  <h1>Analytics lab — Plausible vs Umami</h1>
+  <p class="lead">
+    Beide tools draaien <strong>tegelijk</strong> op de site (zie <code>index.html</code> + <code>spot.html</code>).
+    Elk event uit <code>analytics.js</code> wordt naar allebei gestuurd, dus we kunnen ze fair vergelijken
+    op exact dezelfde dataset. Hieronder de live dashboards naast elkaar.
+  </p>
+
+  <!-- Test-knoppen om events direct te triggeren zonder door de site te klikken -->
+  <div class="tester">
+    <strong>🧪 Test events handmatig</strong>
+    <div class="hint">Klik om een event naar beide tools te sturen. Open de dashboards in een 2e tab en kijk welke 't snelst toont.</div>
+    <div class="tester-buttons">
+      <button onclick="kst.track('pin_click', {spot: 'test-spot', name: 'Test Spot'})">📍 pin_click</button>
+      <button onclick="kst.track('filter_use', {filter: 'category', value: 'Eten'})">🏷️ filter_use</button>
+      <button onclick="kst.track('more_info_click', {spot: 'test-spot'})">ℹ️ more_info_click</button>
+      <button onclick="kst.track('route_click', {spot: 'test-spot'})">🗺️ route_click</button>
+    </div>
+  </div>
+
+  <div class="split">
+    <!-- ===== PLAUSIBLE ===== -->
+    <section class="col">
+      <h2>
+        Plausible
+        <span class="badge eu">🇪🇺 EU-hosted</span>
+        <span class="badge paid">€9/mo</span>
+      </h2>
+      <div class="meta">
+        <span>Setup: 5 min</span>
+        <span>Cookieless: ✅</span>
+        <span>GDPR: ✅</span>
+        <a href="https://plausible.io" target="_blank" rel="noopener">plausible.io</a>
+      </div>
+
+      <!-- Vervang door embed-URL uit Plausible:
+           Dashboard → Site settings → Visibility → Shared link → Copy link
+           Of als public: https://plausible.io/share/kaaispots.be?auth=...&embed=true&theme=light -->
+      <div class="placeholder" id="placeholder-plausible">
+        <strong>Dashboard nog niet ingebed</strong>
+        <div>1. Maak account op <code>plausible.io</code> (30 dagen gratis trial).</div>
+        <div>2. Voeg site toe met domein <code>kaaispots.be</code> (of je netlify-URL).</div>
+        <div>3. <code>data-domain</code> in <code>index.html</code> aanpassen naar dat domein.</div>
+        <div>4. In Plausible: <em>Site settings → Visibility → Shared link → Generate</em>.</div>
+        <div>5. Plak de URL hieronder als <code>&lt;iframe src="..."&gt;</code> en zet <code>?embed=true&amp;theme=light</code> achter de URL.</div>
+        <div>6. Vervang deze placeholder-div door de iframe in <code>analytics.html</code>.</div>
+      </div>
+      <!--
+      <iframe class="frame" src="https://plausible.io/share/kaaispots.be?auth=YOUR_TOKEN&embed=true&theme=light"
+              loading="lazy" title="Plausible dashboard"></iframe>
+      -->
+    </section>
+
+    <!-- ===== UMAMI ===== -->
+    <section class="col">
+      <h2>
+        Umami
+        <span class="badge oss">⚙️ open-source</span>
+        <span class="badge eu">🇪🇺 self-host of cloud</span>
+      </h2>
+      <div class="meta">
+        <span>Setup: 10 min (cloud) / 30 min (self-host)</span>
+        <span>Cookieless: ✅</span>
+        <span>GDPR: ✅</span>
+        <a href="https://umami.is" target="_blank" rel="noopener">umami.is</a>
+      </div>
+
+      <!-- Vervang door embed:
+           Umami → Settings → Websites → kies site → Share URL → enable + copy
+           Plak als iframe src="https://cloud.umami.is/share/XXX/kaaispots.be" -->
+      <div class="placeholder" id="placeholder-umami">
+        <strong>Dashboard nog niet ingebed</strong>
+        <div>1. Maak account op <code>cloud.umami.is</code> (gratis, 10K events/maand) — of self-host via Docker.</div>
+        <div>2. Voeg site toe → krijg <code>data-website-id</code> (UUID).</div>
+        <div>3. Vervang <code>UMAMI_WEBSITE_ID</code> in <code>index.html</code> en <code>spot.html</code>.</div>
+        <div>4. In Umami: <em>Settings → Websites → Edit → Share URL toggle aan → kopieer</em>.</div>
+        <div>5. Vervang deze placeholder door de iframe in <code>analytics.html</code>.</div>
+      </div>
+      <!--
+      <iframe class="frame" src="https://cloud.umami.is/share/XXX/kaaispots.be"
+              loading="lazy" title="Umami dashboard"></iframe>
+      -->
+    </section>
+  </div>
+
+  <!-- ===== Events die we tracken ===== -->
+  <section class="events">
+    <h2>📡 Events die we tracken</h2>
+    <p style="margin: 0 0 14px; color: var(--muted); font-size: 13px;">
+      Allemaal anoniem — geen PII. Beide tools ontvangen exact dezelfde events.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Event</th><th>Wanneer</th><th>Props</th><th>Waar in code</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>pageview</code></td>
+          <td>Bij elke pagina-load</td>
+          <td><em>automatisch</em></td>
+          <td>script tag</td>
+        </tr>
+        <tr>
+          <td><code>pin_click</code></td>
+          <td>Klik op kaart-pin</td>
+          <td><code>{ spot, name }</code></td>
+          <td><code>scripts.js</code> — marker click</td>
+        </tr>
+        <tr>
+          <td><code>filter_use</code></td>
+          <td>Filter-chip / toggle</td>
+          <td><code>{ filter, value }</code></td>
+          <td><code>scripts.js</code> — chips + reset</td>
+        </tr>
+        <tr>
+          <td><code>more_info_click</code></td>
+          <td>"Meer info" knop</td>
+          <td><code>{ spot }</code></td>
+          <td>popup HTML — <code>data-track</code></td>
+        </tr>
+        <tr>
+          <td><code>route_click</code></td>
+          <td>Route-knop (Maps)</td>
+          <td><code>{ spot }</code></td>
+          <td>popup + detail — <code>data-track</code></td>
+        </tr>
+        <tr>
+          <td><code>suggest_open</code></td>
+          <td>Klik op "+ Suggesteer"</td>
+          <td><code>{ source }</code></td>
+          <td>footer-link</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<!-- Laad analytics zelf zodat de test-knoppen werken -->
+<script>window.KST_DEBUG = true;</script>
+<!-- Plausible -->
+<script async src="https://plausible.io/js/pa-6824FNV5vCWbIJhqIEWPs.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<!-- Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="5e96ff9b-2395-44f9-b63d-753adfc6fc2a"></script>
+<!-- KaaiSpots tracker -->
+<script src="analytics.js"></script>
+</body>
+</html>
