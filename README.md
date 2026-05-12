@@ -24,7 +24,7 @@ De app: een kaart met spots rond Campus Kaai (eten, drinken, studeren, chillen, 
 **Milan — frontend polish**
 - [x] "Open nu"-toggle echt laten filteren op `hours` (nu mock)
 - [x] "Gratis"-categorie-chip echt laten filteren (`price === 0`)
-- [ ] Favicon + OG-image + meta description toevoegen (voor sharing)
+- [x] Favicon + OG-image + meta description toevoegen (voor sharing)
 - [ ] Testen op iPhone Safari + Android Chrome; mobile-default tab heroverwegen (`view-list` vs `view-map`)
 - [ ] Lighthouse-pass — accessibility + perf
 

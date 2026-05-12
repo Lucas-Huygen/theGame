@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAFAF7"/>
+
+  <!-- Orange left accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#FF6B35"/>
+
+  <!-- Decorative large pin (right side, very faded) -->
+  <path d="M1060 -30C951 -30 863 57 863 163c0 158 176 312 188 322c6 5 13 5 18 0C1081 475 1257 321 1257 163C1257 57 1169 -30 1060 -30z" fill="#FF6B35" opacity="0.07"/>
+  <circle cx="1060" cy="163" r="65" fill="#FAFAF7" opacity="0.6"/>
+
+  <!-- Small pin icon (top-left) -->
+  <circle cx="96" cy="82" r="34" fill="#FF6B35" opacity="0.15"/>
+  <path d="M96 57C84.1 57 74.5 66.4 74.5 77.9c0 14.4 14.8 23.8 15.4 24.4.5.4 1.2.4 1.7 0C92.2 101.7 117.5 92.3 117.5 77.9 117.5 66.4 107.9 57 96 57z" fill="#FF6B35"/>
+  <circle cx="96" cy="78" r="6.5" fill="white"/>
+
+  <!-- KaaiSpots wordmark -->
+  <text x="80" y="258" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="90" fill="#0F0F0F" letter-spacing="-1">KaaiSpots</text>
+
+  <!-- Tagline -->
+  <text x="84" y="320" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="34" fill="#6B6B66">de buurt rond Campus Kaai</text>
+
+  <!-- Orange divider -->
+  <rect x="80" y="358" width="140" height="5" rx="2.5" fill="#FF6B35"/>
+
+  <!-- Feature description -->
+  <text x="80" y="420" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="27" fill="#2B2B2B">Eten · Koffie · Studeren · Cafés · Gratis plekken</text>
+  <text x="80" y="462" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="27" fill="#2B2B2B">Filter op categorie, prijs en openingstijden.</text>
+
+  <!-- URL bottom -->
+  <text x="80" y="578" font-family="'Courier New', monospace" font-weight="400" font-size="21" fill="#6B6B66">kaaispots.netlify.app</text>
+</svg>
