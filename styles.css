@@ -153,6 +153,11 @@ a { color: inherit; }
   backdrop-filter: blur(4px);
 }
 .hero .badge.fav { background: var(--accent); border-color: var(--accent); }
+.hero.detail .tag {
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
 
 /* ---------- filter bar ---------- */
 .filterbar {
@@ -677,7 +682,7 @@ h2.section-title {
 }
 .btn-detail {
   flex: 1;
-  background: var(--accent); color: #fff;
+  background: var(--ink); color: #fff;
   border: 0;
   padding: 9px 12px;
   border-radius: 8px;
@@ -687,7 +692,8 @@ h2.section-title {
   transition: background .12s ease;
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
 }
-.btn-detail:hover { background: #E25A28; }
+.btn-detail:visited { color: #fff; }
+.btn-detail:hover { background: var(--accent); }
 .btn-route-secondary {
   flex: 1;
   background: transparent; color: var(--ink);
