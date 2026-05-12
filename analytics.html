@@ -108,22 +108,10 @@
         <a href="https://plausible.io" target="_blank" rel="noopener">plausible.io</a>
       </div>
 
-      <!-- Vervang door embed-URL uit Plausible:
-           Dashboard → Site settings → Visibility → Shared link → Copy link
-           Of als public: https://plausible.io/share/kaaispots.be?auth=...&embed=true&theme=light -->
-      <div class="placeholder" id="placeholder-plausible">
-        <strong>Dashboard nog niet ingebed</strong>
-        <div>1. Maak account op <code>plausible.io</code> (30 dagen gratis trial).</div>
-        <div>2. Voeg site toe met domein <code>kaaispots.be</code> (of je netlify-URL).</div>
-        <div>3. <code>data-domain</code> in <code>index.html</code> aanpassen naar dat domein.</div>
-        <div>4. In Plausible: <em>Site settings → Visibility → Shared link → Generate</em>.</div>
-        <div>5. Plak de URL hieronder als <code>&lt;iframe src="..."&gt;</code> en zet <code>?embed=true&amp;theme=light</code> achter de URL.</div>
-        <div>6. Vervang deze placeholder-div door de iframe in <code>analytics.html</code>.</div>
-      </div>
-      <!--
-      <iframe class="frame" src="https://plausible.io/share/kaaispots.be?auth=YOUR_TOKEN&embed=true&theme=light"
-              loading="lazy" title="Plausible dashboard"></iframe>
-      -->
+      <iframe plausible-embed class="frame"
+              src="https://plausible.io/share/luzemi.netlify.app?auth=5k69xvdRUa8lJDqY5tF4Y&embed=true&theme=light&background=transparent"
+              loading="lazy" title="Plausible dashboard — luzemi.netlify.app"></iframe>
+      <script async src="https://plausible.io/js/embed.host.js"></script>
     </section>
 
     <!-- ===== UMAMI ===== -->
@@ -140,21 +128,9 @@
         <a href="https://umami.is" target="_blank" rel="noopener">umami.is</a>
       </div>
 
-      <!-- Vervang door embed:
-           Umami → Settings → Websites → kies site → Share URL → enable + copy
-           Plak als iframe src="https://cloud.umami.is/share/XXX/kaaispots.be" -->
-      <div class="placeholder" id="placeholder-umami">
-        <strong>Dashboard nog niet ingebed</strong>
-        <div>1. Maak account op <code>cloud.umami.is</code> (gratis, 10K events/maand) — of self-host via Docker.</div>
-        <div>2. Voeg site toe → krijg <code>data-website-id</code> (UUID).</div>
-        <div>3. Vervang <code>UMAMI_WEBSITE_ID</code> in <code>index.html</code> en <code>spot.html</code>.</div>
-        <div>4. In Umami: <em>Settings → Websites → Edit → Share URL toggle aan → kopieer</em>.</div>
-        <div>5. Vervang deze placeholder door de iframe in <code>analytics.html</code>.</div>
-      </div>
-      <!--
-      <iframe class="frame" src="https://cloud.umami.is/share/XXX/kaaispots.be"
-              loading="lazy" title="Umami dashboard"></iframe>
-      -->
+      <iframe class="frame"
+              src="https://cloud.umami.is/share/NmttqRmTkCYjIkWr"
+              loading="lazy" title="Umami dashboard — luzemi.netlify.app"></iframe>
     </section>
   </div>
 
