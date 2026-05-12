@@ -163,6 +163,18 @@ function setLanguage(lang) {
     });
   });
 
+  // Update tagline
+  const tagline = document.querySelector('.tagline');
+  if (tagline && window.CURRENT_LANG === 'en') {
+    tagline.textContent = t('tagline');
+  }
+
+  // Update header back link
+  const backLink = document.querySelector('.back-link');
+  if (backLink && window.CURRENT_LANG === 'en') {
+    backLink.textContent = t('backToMap');
+  }
+
   // Update static UI text on main page
   if (document.getElementById('spotTotalCount') || document.getElementById('spotCountHero')) {
     const heroTitle = document.querySelector('.hero h1');
@@ -175,7 +187,8 @@ function setLanguage(lang) {
       heroTitle.innerHTML = t('heroTitle');
     }
     if (heroDesc && window.CURRENT_LANG === 'en') {
-      heroDesc.innerHTML = t('heroDesc', { count: '{count}' });
+      const totalSpots = window.SPOTS ? window.SPOTS.length : 0;
+      heroDesc.innerHTML = t('heroDesc', { count: totalSpots });
     }
     if (openNowBtn && window.CURRENT_LANG === 'en') {
       openNowBtn.querySelector('.label-text').textContent = t('openNow');
@@ -186,6 +199,21 @@ function setLanguage(lang) {
     viewTabs.forEach(tab => {
       const view = tab.dataset.view;
       tab.textContent = view === 'map' ? t('mapTab') : t('listTab');
+    });
+
+    // Translate category buttons
+    document.querySelectorAll('#catChips .chip').forEach(btn => {
+      const cat = btn.dataset.cat;
+      const glyphEl = btn.querySelector('.glyph');
+      if (glyphEl && window.CURRENT_LANG === 'en') {
+        const glyphHtml = glyphEl.innerHTML;
+        btn.innerHTML = `<span class="glyph">${glyphHtml}</span>${t(cat)}`;
+      }
+    });
+
+    // Translate price chip labels if needed
+    document.querySelectorAll('#priceChips .chip').forEach(btn => {
+      // Price chips are just € symbols, no translation needed
     });
   }
 
@@ -218,6 +246,22 @@ function setLanguage(lang) {
     });
     L.marker(CAMPUS, { icon: campusIcon, interactive: false, zIndexOffset: -100 }).addTo(map);
 
+    // Update hero meta on load and when filters change
+    function updateHeroMeta() {
+      const heroMeta = document.querySelector('.hero-meta');
+      if (heroMeta) {
+        const spotCountEl = heroMeta.querySelector('.hero-count strong');
+        if (spotCountEl) {
+          const count = spotCountEl.textContent;
+          const metaText = heroMeta.querySelector('.hero-meta > span:nth-child(3)');
+          if (metaText && window.CURRENT_LANG === 'en') {
+            metaText.textContent = t('heroLocation');
+          }
+        }
+      }
+    }
+    updateHeroMeta();
+
     const markers = {};
     function makePin(spot) {
       const cat = spot.cats[0];
@@ -241,7 +285,6 @@ function setLanguage(lang) {
       const fav = spot.favorite ? `<span class="fav-badge" title="${t('favoriteTeam')}">★</span>` : '';
       const dest = `${spot.coords[0]},${spot.coords[1]}`;
       const url = `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=walking`;
-      const walkText = window.CURRENT_LANG === 'en' ? `${spot.walk} ${t('walkMinutes')}` : `${spot.walk} ${t('walkMinutes')}`;
       return `
         <div class="popup-thumb" style="background:${spot.color}">
           <div style="position:relative;z-index:1">${spot.name.toUpperCase()}</div>
@@ -254,7 +297,7 @@ function setLanguage(lang) {
             <a class="btn-detail" href="spot.html?id=${spot.id}">${t('moreInfo')}</a>
             <div class="popup-actions-row">
               <a class="btn-route-secondary" href="${url}" target="_blank" rel="noopener">${t('route')}</a>
-              <span class="popup-walk mono">${walkText}</span>
+              <span class="popup-walk mono">${spot.walk} ${t('walkMinutes')}</span>
             </div>
           </div>
         </div>
@@ -311,9 +354,6 @@ function setLanguage(lang) {
           if (map.hasLayer(m)) map.removeLayer(m);
         }
       });
-      document.getElementById('spotCount').textContent = visible;
-      const heroCount = document.getElementById('spotCountHero');
-      if (heroCount) heroCount.textContent = visible;
       
       // Update hero description with spot count
       const heroDesc = document.querySelector('.hero p');
@@ -340,7 +380,6 @@ function setLanguage(lang) {
         const fav = spot.favorite ? `<span class="fav-badge" title="${t('favoriteTeam')}">★</span>` : '';
         const active = state.active === spot.id ? 'active' : '';
         const thumbLabel = spot.name.length > 22 ? spot.name.slice(0, 20) + '…' : spot.name;
-        const walkText = window.CURRENT_LANG === 'en' ? `${spot.walk} ${t('walkFrom')}` : `${spot.walk} ${t('walkFrom')}`;
         return `
           <article class="spot-card ${active}" data-id="${spot.id}" tabindex="0">
             <div class="spot-thumb" style="background:${spot.color}">
@@ -354,7 +393,7 @@ function setLanguage(lang) {
               <p class="spot-desc">${spot.desc.split('.')[0]}.</p>
               <div class="spot-foot mono">
                 <svg class="walk-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M13 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7.5 22l2-9-2.5-1v-5l4.5-2 3.5 2 2 4 2 1-1 2-3-1.5-1-2v3l3 4-1 4h-2l1-3-3-3-2 6h-2.5z"/></svg>
-                ${walkText}
+                ${spot.walk} ${t('walkFrom')}
               </div>
             </div>
           </article>
@@ -402,11 +441,10 @@ function setLanguage(lang) {
       const cat = btn.dataset.cat;
       // Update label if in English
       if (window.CURRENT_LANG === 'en') {
-        const label = btn.querySelector('span:last-child') || btn;
-        if (btn.querySelector('span:last-child')) {
-          btn.querySelector('span:last-child').textContent = t(cat);
-        } else {
-          btn.textContent = t(cat);
+        const glyphEl = btn.querySelector('.glyph');
+        if (glyphEl) {
+          const glyphHtml = glyphEl.innerHTML;
+          btn.innerHTML = `<span class="glyph">${glyphHtml}</span>${t(cat)}`;
         }
       }
       btn.addEventListener('click', () => {
